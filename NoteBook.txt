@@ -1,0 +1,63 @@
+python3.11 -m venv Environment
+Environment/Scripts/activate
+pip install -r requirements.txt
+python -m pip install Django==4.2.6
+django-admin startproject Main
+cd Main
+py manage.py startapp Home
+py manage.py makemigrations
+py manage.py migrate
+py manage.py runserver
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pakage for intall if you want 
+////////////////////////////////////////////// =======================>>
+asgiref==3.7.2
+attrs==23.2.0
+beautifulsoup4==4.12.2
+certifi==2023.11.17
+charset-normalizer==3.3.2
+Django==4.2.6
+django-bootstrap-v5==1.0.11
+django-jalali-date==1.1.0
+django-render-partial==0.4
+django-jazzmin
+idna==3.6
+isodate==0.6.1
+jdatetime==4.1.1
+lxml==5.1.0
+pillow==10.2.0
+platformdirs==4.1.0
+pytz==2023.3.post1
+requests==2.31.0
+requests-file==1.5.1
+requests-toolbelt==1.0.0
+six==1.16.0
+sorl-thumbnail==12.10.0
+soupsieve==2.5
+sqlparse==0.4.4
+tzdata==2023.4
+urllib3==2.1.0
+zeep==4.2.1
+ <<======================= ////////////////////////////////////////////// 
