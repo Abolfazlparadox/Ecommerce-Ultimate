@@ -1,0 +1,111 @@
+{% extends 'shared/layout.html' %}
+{% load render_partial %}
+{% load poll_extras %}
+
+{% block title %}
+    جزییات خرید
+{% endblock %}
+
+{% block content %}
+<div class="container-main">
+    <div class="d-block">
+        <section class="profile-home">
+            <div class="col-lg">
+                <div class="post-item-profile order-1 d-block">
+                    <div class="col-lg-3 col-md-3 col-xs-12 pr">
+                        {% render_partial 'User.views.user_panel_menu_component' %}
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-xs-12 pl">
+                        <div class="profile-content">
+                            <div class="profile-stats">
+                                <div class="table-order-view">
+                                    <h2 class="order-view-title mt-4 mb-3">جزییات سفارش </h2>
+                                    {% for detail in cart.cartdetail_set.all %}
+                                    <table class="table table-borderless">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">نام محصول</th>
+                                                <th scope="col">مجموع</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="product-name">{{ detail.product.title }}</td>
+                                                <td class="product-total">{{ detail.final_price|three_digits_currency }}</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th scope="row">شناسه:</th>
+                                                <td>{{ detail.id }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">تعداد</th>
+                                                <td>{{ detail.count }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">قیمت نهایی:</th>
+                                                <td> {{ detail.get_total_price|three_digits_currency }} </td>
+                                            </tr>
+                                            {% comment %} <tr>
+                                                <th scope="row">تخفیـف:</th>
+                                                <td> {{ detail.get_total_price|three_digits_currency }} </td>
+                                            </tr> {% endcomment %}
+                                            {% comment %} <tr>
+                                                <th scope="row">حمل و نقل:</th>
+                                                <td>حمل و نقل رایگان</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">روش پرداخت:</th>
+                                                <td>انتقال مستقیم بانکی</td>
+                                            </tr> {% endcomment %}
+                                            <tr>
+                                                <th scope="row">قیمت نهایی خرید:</th>
+                                                <td>{{ detail.get_total_price|three_digits_currency }}</td>
+                                            </tr>
+                                        </tfoot>
+                                        <br>
+                                        <br>
+                                        {% endfor %}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+ {% comment %} <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            {% render_partial 'User.views.user_panel_menu_component' %}
+        </div>
+        <div class="col-md-8">
+            <table class="table table-responsive table-hover table-striped">
+                <tr>
+                    <th class="text-right">شناسه</th>
+                    <th class="text-right">محصول</th>
+                    <th class="text-right">تعداد</th>
+                    <th class="text-right">قیمت نهایی خرید</th>
+                </tr>
+                {% for detail in cart.cartdetail_set.all %}
+                    <tr>
+                        <td class="text-right">{{ detail.id }}</td>
+                        <td class="text-right">{{ detail.product.title }}</td>
+                        <td class="text-right">{{ detail.count }}</td>
+                        <td class="text-right">{{ detail.final_price|three_digits_currency }}</td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+</div>  {% endcomment %}

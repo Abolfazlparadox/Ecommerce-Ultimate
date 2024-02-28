@@ -1,0 +1,88 @@
+{% load thumbnail %}
+{% load poll_extras %}
+<div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
+    <section class="product-box product product-type-simple">
+        <div class="thumb">
+            <a href="#" class="d-block">
+                <div class="promotion-badge">فروش ویژه</div>
+                <div class="product-rate">
+                    <i class="fa fa-star active"></i>
+                    <i class="fa fa-star active"></i>
+                    <i class="fa fa-star active"></i>
+                    <i class="fa fa-star active"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="discount-d">
+                    <span>{{product.discount}}</span>
+                </div>
+                {% if product.image %}
+                    {% thumbnail product.image "268x250" quality=90 crop='center' as im %}
+                        <img src="{{ im.url }}">
+                    {% endthumbnail %}
+                {% else %}
+                <img src="/static/images/slider-product/btt.jpg">
+                {% endif %}
+            </a>
+        </div>
+        <div class="title">
+            <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+        </div>
+        <div class="price">
+            {% if product.discount %}
+            {% comment %} <span class="line-through"><S>{{ product.price | three_digits_currency }}</S></span>
+            <br>
+            <span class="text-success">{{ product.discounted_price | three_digits_currency }}</span> {% endcomment %}
+            
+
+            <span class="price-old text-decoration-line-through text-danger"><s>{{ product.price | three_digits_currency }}</s></span>
+            <br>
+            <span class="price-new text-secondary"><b>{{ product.discounted_price | three_digits_currency }}<b></span>
+
+            {% else %}
+            <span class="new-price">{{ product.price | three_digits_currency }}</span>
+            {% endif %}
+        </div>
+    </section>
+</div>
+{% comment %} <div class="col-sm-{{ col_size }}">
+    <div class="product-image-wrapper">
+        <div class="single-products">
+            <div class="productinfo text-center">
+                {% if product.image %}
+                    {% thumbnail product.image "268x250" quality=90 crop='center' as im %}
+                        <img src="{{ im.url }}">
+                    {% endthumbnail %}
+                {% else %}
+                    <img src="/static/images/shop/product.jpg" alt="">
+                {% endif %}
+                <h2>{{ product.price | three_digits_currency }} </h2>
+                <p>{{ product.title }}</p>
+                <input type="number"  value="1" class="hid"  class="search_box" id="product-count">
+                <a onclick="addProductToCart({{product.id}})" class="btn btn-default add-to-cart"><i
+                        class="fa fa-shopping-cart"></i>افزودن به سبـد خریـد</a>
+            </div>
+            <div class="product-overlay">
+                <div class="overlay-content">
+                    <h2>{{ product.price| three_digits_currency }} </h2>
+                    <p>{{ product.title }}</p>
+                    <input type="number"  value="1" class="hid" class="search_box" id="product-count">
+                    <a onclick="addProductToCart({{product.id}})" class="btn btn-default add-to-cart"><i
+                            class="fa fa-shopping-cart"></i>افزودن به سبـد خریـد</a>
+                </div>
+            </div>
+        </div>
+        <div class="choose">
+            <ul class="nav nav-pills nav-justified">
+                <li>
+                    <a href="{{ product.get_absolute_url }}">
+                        <i class="fa fa-plus-square"></i>
+                        مشاهده جزییات
+                    </a>
+                </li>
+                <li>
+                    <a href=""><i class="fa fa-plus-square"></i>مقایسه</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div> {% endcomment %}

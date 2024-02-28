@@ -1,0 +1,137 @@
+{% load i18n %}
+{% load thumbnail %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% trans "Log in" %}{% endblock %}</title>
+    {% include 'shared/header_references.html' %}
+</head>
+<body>
+
+{% comment %} <!-- login-----------------------------------> {% endcomment %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg">
+            <section class="page-account-box">
+                <div class="col-lg-6 col-md-6 col-xs-12 mx-auto">
+                    <div class="ds-userlogin">
+                        <a href="http://127.0.0.1:8000/en/login/" class="login-ds active"> en </a>
+                        <a href="http://127.0.0.1:8000/login/" class="login-ds active"> fa </a>
+                        <a href="{% url "home_page" %}"  class="account-box" >
+                            {% thumbnail site_setting.site_logo "156x60" quality=99 crop='center' as im %}
+                                <img src="{{ im.url }}">
+                            {% endthumbnail %}
+                        </a>
+                        <div class="account-box">
+                            <div class="account-box-headline">
+                                <a href="{% url "login_page" %}" class="login-ds active">
+                                    <span class="title">{% trans "Log in" %}</span>
+                                    <span class="sub-title"> {{site_setting.site_name}}  </span>
+                                </a>
+                                <a href="{% url "register_page" %}" class="register-ds">
+                                    <span class="title"> {% trans " Register " %} </span>
+                                    <span class="sub-title"> {{site_setting.site_name}} </span>
+                                </a>
+                            </div>
+                            <div class="Login-to-account mt-4">
+                                <div class="account-box-content">
+                                    <h4>  {% trans " Log in to user account" %}</h4>
+                                    <form action="{% url 'login_page' %}" method="post" class="form-account text-right">
+                                        {% csrf_token %}
+                                        <div class="form-account-title">
+                                            <label for="email"> {% trans " Email / Mobile Number " %} </label>
+                                            {{ login_form.email }}
+                                            {{ login_form.email.errors }}
+                                        </div>
+                                        <div class="form-account-title">
+                                            <label for="password">{% trans " Password " %} </label>
+                                            {{ login_form.password }}
+                                            {{ login_form.password.errors }}
+
+                                        </div>
+                                        <div class="form-auth-row">
+                                            <label for="#" class="ui-checkbox mt-1">
+                                                <input type="checkbox" value="1" name="login" id="remember">
+                                                <span class="ui-checkbox-check"></span>
+                                            </label>
+                                            <label for="remember" class="remember-me mr-0"> {% trans " Remember me " %}   </label>
+                                        </div>
+                                        <br>
+                                        <p><a href="{% url 'forget_password_page' %}">{% trans " Forget Password " %}</a></p>
+                                        <div class="form-row-account">
+                                            <button type="submit" class="btn btn-primary btn-login">{% trans "Log in" %}  </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% comment %} <!-- login-----------------------------------> {% endcomment %}
+                   
+{% comment %} <!-- scroll_Progress-------------------------> {% endcomment %}
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+</div>
+{% comment %} <!-- scroll_Progress-------------------------> {% endcomment %}
+
+</body>
+{% include 'shared/footer_references.html' %}
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} {% block content %}
+    <div class="container">
+        <section id="form"><!--form-->
+            <div class="row">
+                <div class="col-sm-6 col-md-offset-3">
+                    <div class="signup-form"><!--sign up form-->
+                        <h2>ورود به حساب کاربری</h2>
+                        <form method="post" action="{% url 'login_page' %}">
+                            {% csrf_token %}
+
+                            {#{{ login_form }}#}
+
+                            {{ login_form.email.label_tag }}
+                            {{ login_form.email }}
+                            {{ login_form.email.errors }}
+                            {{ login_form.password.label_tag }}
+                            {{ login_form.password }}
+                            {{ login_form.password.errors }}
+                            <p><a href="{% url 'forget_password_page' %}">بازیابی کلمه عبور</a></p>
+                            <button type="submit" class="btn btn-default">ورود</button>
+                        </form>
+                    </div><!--/sign up form-->
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}  {% endcomment %}

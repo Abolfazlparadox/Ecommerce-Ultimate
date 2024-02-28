@@ -1,0 +1,69 @@
+{% load i18n %}
+{% load thumbnail %}
+
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>  {% trans " Welcome " %} </title>{% endblock %}
+    <!-- font---------------------------------------->
+    {% include 'shared/header_references.html' %}
+</head>
+<body>
+
+{% comment %} <!-- login-----------------------------------> {% endcomment %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg">
+            <section class="page-account-box">
+                <div class="col-lg-6 col-md-6 col-xs-12 mx-auto">
+                    <div class="ds-userlogin">
+                        <a href="http://127.0.0.1:8000/en/welcome/" class="login-ds active"> en </a>
+                        <a href="http://127.0.0.1:8000/welcome/" class="login-ds active"> fa </a>
+                        <a href="{% url "home_page" %}"  class="account-box-logo" >
+                            {% thumbnail site_setting.site_logo "156x60" quality=99 crop='center' as im %}
+                                <img src="{{ im.url }}">
+                            {% endthumbnail %}
+                        </a>
+                            <div class="account-box">
+                            <div class="Login-to-account mt-4">
+                                <div class="account-box-content">
+                                    <h4 class="mb-2"> {% trans " To " %} {{site_setting.site_name}}  {% trans " Welcome " %} </h4>
+                                        <div class="user-account-welcome">
+                                            <img src="/static/images/man.png">
+                                        </div>
+                                        <div class="made-account">
+                                            <h2> {% trans " Your account in " %} {{site_setting.site_name}} {% trans " Activated " %}</h2>
+                                            <p> {{site_setting.about_us_text}} </p>
+                                        </div>
+                                        <div class="form-row-account">
+                                            <a href={% url "edit_profile_page" %}><button type="submit" name="edit_profile_button" class="btn btn-primary btn-login">  {% trans " Completing the user account " %}</button></a>
+
+                                        </div>
+                                        <div class="form-row-account">
+                                            <a href={% url "home_page" %}><button type="submit" name="home_button" class="btn btn-primary btn-login" > {% trans " Return to home " %}</button></a>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% comment %} <!-- login-----------------------------------> {% endcomment %}
+{% comment %} <!-- scroll_Progress-------------------------> {% endcomment %}
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+</div>
+{% comment %} <!-- scroll_Progress-------------------------> {% endcomment %}
+
+</body>
+{% comment %} <!-- file js----------------------------------------------------> {% endcomment %}
+{% include 'shared/footer_references.html' %}
+</html>

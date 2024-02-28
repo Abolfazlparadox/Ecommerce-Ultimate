@@ -1,0 +1,37 @@
+.errorlist {
+    padding-right: 0 !important;
+}
+
+.errorlist li {
+    color: red;
+}
+
+.list-group ul {
+    padding-right: 0 !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+#show_large_image_modal{
+    color: white !important;
+}
+
+.one-line-text {
+    text-align: right;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 270px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+
+.hid{
+    visibility:hidden;
+}
+
+.main-menu-link-category {
+    padding: 10px 10px !important;
+}

@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-12 18:04+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\article\apps.py:8 .\article\models.py:50
+msgid "Article"
+msgstr "مقالات"
+
+#: .\article\models.py:9
+msgid "Subcategory"
+msgstr "دسته بندی"
+
+#: .\article\models.py:10
+msgid "Category Title"
+msgstr "عنوان دسته بندی"
+
+#: .\article\models.py:11 .\article\models.py:26
+msgid "Title in url"
+msgstr "عنوان در آدرس اینترنتی"
+
+#: .\article\models.py:12 .\article\models.py:30 .\article\models.py:55
+msgid "Active / Passive"
+msgstr "فعال / غیر فعال "
+
+#: .\article\models.py:19
+msgid "Article Category"
+msgstr "دسته بندی مقاله"
+
+#: .\article\models.py:20
+msgid " Articles Categories"
+msgstr "دسته بندی های مقالات"
+
+#: .\article\models.py:25
+msgid "Article Title"
+msgstr "عنوان مقاله"
+
+#: .\article\models.py:27
+msgid "Image of the Article"
+msgstr "تصویر مقاله "
+
+#: .\article\models.py:28
+msgid "Short Description"
+msgstr "توضیحات کوتاه "
+
+#: .\article\models.py:29
+msgid "Article text"
+msgstr "متن مقاله"
+
+#: .\article\models.py:31
+msgid "Categories"
+msgstr " دسته بندی ها"
+
+#: .\article\models.py:32
+msgid "The Writer"
+msgstr "نویسنده"
+
+#: .\article\models.py:33 .\article\models.py:53
+msgid " Date of Registration"
+msgstr "' تاریخ ثبت'"
+
+#: .\article\models.py:45
+msgid " Article"
+msgstr "مقاله"
+
+#: .\article\models.py:46
+msgid " Articles "
+msgstr "مقالات"
+
+#: .\article\models.py:51
+msgid " parent "
+msgstr "والد"
+
+#: .\article\models.py:52
+msgid "User"
+msgstr "کاربر"
+
+#: .\article\models.py:54
+msgid "comment text "
+msgstr "متن نظر"
+
+#: .\article\models.py:61
+msgid "article comment"
+msgstr "نظر مقاله"
+
+#: .\article\models.py:62
+msgid "Article Comments"
+msgstr "نظرات مقاله"

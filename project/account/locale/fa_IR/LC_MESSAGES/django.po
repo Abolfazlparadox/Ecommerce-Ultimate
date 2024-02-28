@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-12 20:13+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\utils\dashboard.py:18
+msgid "Support"
+msgstr ""
+
+#: .\utils\dashboard.py:21
+msgid "Django documentation"
+msgstr ""
+
+#: .\utils\dashboard.py:26
+msgid "Django \"django-users\" mailing list"
+msgstr ""
+
+#: .\utils\dashboard.py:31
+msgid "Django irc channel"
+msgstr ""
+
+#: .\account\apps.py:8
+msgid "Users Module"
+msgstr "ماژول کاربران"
+
+#: .\account\forms.py:38 .\account\forms.py:94
+msgid "The password and repeating the password are inconsistent"
+msgstr "'کلمه عبور و تکرار کلمه عبور مغایرت دارند'"
+
+#: .\account\models.py:9
+msgid "Mobile number"
+msgstr "شماره همراه"
+
+#: .\account\models.py:10
+msgid " National Code "
+msgstr "کد ملی"
+
+#: .\account\models.py:11
+msgid " Date of birth "
+msgstr "تاریخ تولد"
+
+#: .\account\models.py:12
+msgid "Avatar image"
+msgstr "تصویر آواتار"
+
+#: .\account\models.py:13
+msgid "Email activation code"
+msgstr "کد فعال سازی ایمیل"
+
+#: .\account\models.py:14
+msgid "Biography"
+msgstr "توضیحات"
+
+#: .\account\models.py:15
+msgid " Address "
+msgstr "آدرس"
+
+#: .\account\models.py:16
+msgid " State"
+msgstr "استان"
+
+#: .\account\models.py:18
+msgid "City "
+msgstr " شهر"
+
+#: .\account\models.py:19
+msgid "Post code"
+msgstr " کد پستی"
+
+#: .\account\models.py:20 .\account\models.py:23
+msgid "Man"
+msgstr "مرد"
+
+#: .\account\models.py:21 .\account\models.py:24
+msgid "Female"
+msgstr "زن"
+
+#: .\account\models.py:26
+msgid "gender"
+msgstr "جنسیت"
+
+#: .\account\models.py:27 .\account\models.py:30
+msgid "customer"
+msgstr "مشتری"
+
+#: .\account\models.py:28 .\account\models.py:31
+msgid "vendor"
+msgstr "فروشنده"
+
+#: .\account\models.py:33
+msgid "status"
+msgstr "وضعیت"
+
+#: .\account\models.py:35
+msgid "admission"
+msgstr "پذیرش"
+
+#: .\account\models.py:36
+msgid " Job"
+msgstr "شغل"
+
+#: .\account\models.py:38
+msgid "User"
+msgstr "کاربر"
+
+#: .\account\models.py:39
+msgid "Users"
+msgstr "کاربران"
+
+#: .\account\templates\account_module\forgot_password.html:12
+#: .\account\templates\account_module\forgot_password.html:36
+#: .\account\templates\account_module\login.html:67
+msgid " Forget Password "
+msgstr "فراموشی رمز عبور"
+
+#: .\account\templates\account_module\forgot_password.html:37
+msgid " Forgot your password? Enter your mobile number or email.  "
+msgstr ""
+"گذرواژه خود را فراموش کرده اید؟ شماره موبایل یا ایمیل خود را وارد کنید."
+
+#: .\account\templates\account_module\forgot_password.html:41
+#: .\account\templates\account_module\login.html:49
+#: .\account\templates\account_module\register.html:47
+msgid " Email / Mobile Number "
+msgstr "ایمیل / شماره موبایل"
+
+#: .\account\templates\account_module\forgot_password.html:48
+msgid "  Reset password "
+msgstr "  بازگردانی رمز عبور "
+
+#: .\account\templates\account_module\login.html:12
+#: .\account\templates\account_module\login.html:35
+#: .\account\templates\account_module\login.html:69
+#: .\account\templates\account_module\register.html:33
+msgid "Log in"
+msgstr "ورود"
+
+#: .\account\templates\account_module\login.html:39
+#: .\account\templates\account_module\register.html:12
+#: .\account\templates\account_module\register.html:37
+#: .\account\templates\account_module\register.html:72
+msgid " Register "
+msgstr "ثبت نام"
+
+#: .\account\templates\account_module\login.html:45
+msgid " Log in to user account"
+msgstr "ورود به حساب کاربری"
+
+#: .\account\templates\account_module\login.html:54
+#: .\account\templates\account_module\register.html:52
+msgid " Password "
+msgstr "رمز عبور"
+
+#: .\account\templates\account_module\login.html:64
+msgid " Remember me "
+msgstr "مرا به خاطر بسپار"
+
+#: .\account\templates\account_module\register.html:43
+msgid " Register at"
+msgstr " ثبت نام در"
+
+#: .\account\templates\account_module\register.html:57
+msgid " Confirm Password "
+msgstr " تکرار کلمه عبور "
+
+#: .\account\templates\account_module\reset_password.html:12
+#: .\account\templates\account_module\reset_password.html:35
+#: .\account\templates\account_module\reset_password.html:49
+msgid " Change Password "
+msgstr " تغییر رمز عبور  "
+
+#: .\account\templates\account_module\reset_password.html:39
+msgid " New password"
+msgstr "    رمز عبور جدید  "
+
+#: .\account\templates\account_module\reset_password.html:44
+msgid "Repeat the new password "
+msgstr "  تکرار رمز عبور جدید  "
+
+#: .\account\templates\account_module\welcome.html:10
+#: .\account\templates\account_module\welcome.html:34
+msgid " Welcome "
+msgstr "خوش آمدید"
+
+#: .\account\templates\account_module\welcome.html:34
+msgid " To "
+msgstr " به"
+
+#: .\account\templates\account_module\welcome.html:39
+msgid " Your account in "
+msgstr "حساب کاربری شما در "
+
+#: .\account\templates\account_module\welcome.html:39
+msgid " Activated "
+msgstr "فعال شد"
+
+#: .\account\templates\account_module\welcome.html:43
+msgid " Completing the user account "
+msgstr " تکمیل حساب کاربری "
+
+#: .\account\templates\account_module\welcome.html:47
+msgid " Return to home "
+msgstr "برگشت به خانه"
+
+#: .\account\views.py:32
+msgid "The entered email is duplicate"
+msgstr "ایمیل وارد شده تکراری می باشد "
+
+#: .\account\views.py:87
+msgid "Your account has not been activated"
+msgstr "حساب کاربری شما فعال نشده است "
+
+#: .\account\views.py:94
+msgid "The password is wrong"
+msgstr "کلمه عبور اشتباه است "
+
+#: .\account\views.py:96
+msgid "A user with the entered profile was not found"
+msgstr "کاربری با مشخصات وارد شده یافت نشد "

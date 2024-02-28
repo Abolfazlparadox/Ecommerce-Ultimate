@@ -1,0 +1,160 @@
+{% load i18n %}
+{% load thumbnail %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% trans " Register " %}</title>
+    {% include 'shared/header_references.html' %}
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg">
+            <section class="page-account-box">
+                <div class="col-lg-6 col-md-6 col-xs-12 mx-auto">
+                    <div class="ds-userlogin">
+                        <a href="http://127.0.0.1:8000/en/register/" class="login-ds active"> en </a>
+                        <a href="http://127.0.0.1:8000/register/" class="login-ds active"> fa </a>
+                        <a href="{% url "home_page" %}"  class="account-box-logo" >
+                            {% thumbnail site_setting.site_logo "156x60" quality=99 crop='center' as im %}
+                                <img src="{{ im.url }}">
+                            {% endthumbnail %}
+                        </a>
+                        <div class="account-box">
+                            <div class="account-box-headline">
+                                <a href="{% url "login_page" %}" class="login-ds ">
+                                    <span class="title">{% trans "Log in" %}</span>
+                                    <span class="sub-title"> {{site_setting.site_name}}  </span>
+                                </a>
+                                <a href="{% url "register_page" %}" class="register-ds active">
+                                    <span class="title">{% trans " Register " %} </span>
+                                    <span class="sub-title"> {{site_setting.site_name}} </span>
+                                </a>
+                            </div>
+                            <div class="Login-to-account mt-4">
+                                <div class="account-box-content">
+                                    <h4>  {% trans " Register at" %}  {{site_setting.site_name}}</h4>
+                                    <form action="{% url 'register_page' %}" method="post" class="form-account text-right">
+                                        {% csrf_token %}
+                                        <div class="form-account-title">
+                                            <label for="email"> {% trans " Email / Mobile Number " %}</label>
+                                            {{ register_form.email }}
+                                            {{ register_form.email.errors }}
+                                        </div>
+                                        <div class="form-account-title">
+                                            <label for="password">{% trans " Password " %} </label>
+                                            {{ register_form.password }}
+                                            {{ register_form.password.errors }}
+                                        </div>
+                                        <div class="form-account-title">
+                                            <label for="confirm_password"> {% trans " Confirm Password " %}   </label>
+                                            {{ register_form.confirm_password }}
+                                            {{ register_form.confirm_password.errors }}
+                                        </div>
+                                        <div class="form-auth-row">
+                                            <label for="remember" class="ui-checkbox mt-1">
+                                                {{ register_form.remember_me }}
+                                                <span class="ui-checkbox-check"></span>
+                                            </label>
+                                            <label for="remember" class="remember-me mr-0">
+                                                {% comment %} <a href="#">حریم خصوصی</a> و <a href="#">شرایط قوانین </a>استفاده از سرویس های سایت دیجی‌اسمارت را مطالعه نموده و با کلیه موارد آن موافقم. {% endcomment %}
+                                            </label>
+                                        </div>
+                                        <div class="form-row-account">
+                                            <button type="submit" class="btn btn-primary btn-login">{% trans " Register " %}  </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+</div>
+</body>
+{% include 'shared/footer_references.html' %}
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} {% block content %}
+    <div class="container">
+        <section id="form"><!--form-->
+            <div class="row">
+                <div class="col-sm-6 col-md-offset-3">
+                    <div class="signup-form"><!--sign up form-->
+                        <h2>ثبت نام کاربـر جدیـد</h2>
+                        <form method="post" action="{% url 'register_page' %}">
+                            {% csrf_token %}
+
+                            {#{{ register_form }}#}
+
+                            {{ register_form.email.label_tag }}
+                            {{ register_form.email }}
+                            {{ register_form.email.errors }}
+                            {{ register_form.password.label_tag }}
+                            {{ register_form.password }}
+                            {{ register_form.password.errors }}
+                            {{ register_form.confirm_password.label_tag }}
+                            {{ register_form.confirm_password }}
+                            {{ register_form.confirm_password.errors }}
+
+                            {% comment %}{{ register_form.errors }}{% endcomment %}
+
+                            {% comment %}<input type="text" placeholder="نام کاربـری">
+                            <input type="email" placeholder="آدرس ایمیـل">
+                            <input type="password" placeholder="رمـز عبـور">{% endcomment %}
+                            {% comment %} <button type="submit" class="btn btn-default">ثبت نام</button>
+                        </form>
+                    </div><!--/sign up form-->
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %} {% endcomment %}

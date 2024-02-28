@@ -1,0 +1,2391 @@
+
+{% extends 'shared/layout.html' %}
+{% load thumbnail %}
+{% load poll_extras %}
+
+    {% comment %} <p>{{data}}</p>
+    <p>{{message}}</p> {% endcomment %}
+{% block title %}
+    فروشگاه امید | صفحه اصلی
+{% endblock %}
+
+ {% block content %}
+{% comment %} <!-- adplacement-------------------------------> {% endcomment %}
+<div class="container-main">
+    <div class="col-lg-3 col-md-3 col-xs-12 pr">
+        <div class="adplacement-container-row mt-4">
+            <div class="sidebar-menu-widget-area">
+                <section class="megamenu-widget">
+                    <div class="header-main-menu">
+                        <ul class="main-menu-ul category-menu mega-menu-level-one">
+                            <li class="main-menu-item category-menu-item menu-item-type-custom">
+                                <a href="#" class="main-menu-link-category">
+                                    <img src="/static/images/menu-main/category/smartphone.png">
+                                    کالای دیجیتال
+                                </a>
+                                <ul class="mega-menu-category sub-menu mega-menu-level-two">
+                                    <li class="menu-category-item menu-item-type-custom menu-item">
+                                        <a href="#" class="menu-category-link-title">
+                                            موبایل
+                                        </a>
+                                        <ul class="sub-menu-category mega-menu-level-there">
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اپل
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سامسونگ
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    نوکیا
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    ایسوس
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    هواوی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    الجی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اچ تی سی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سونی
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-category-item menu-item-type-custom menu-item">
+                                        <a href="#" class="menu-category-link-title">
+                                            موبایل
+                                        </a>
+                                        <ul class="sub-menu-category mega-menu-level-there">
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اپل
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سامسونگ
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    نوکیا
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    ایسوس
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    هواوی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    الجی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اچ تی سی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سونی
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-category-item menu-item-type-custom menu-item">
+                                        <a href="#" class="menu-category-link-title">
+                                            موبایل
+                                        </a>
+                                        <ul class="sub-menu-category mega-menu-level-there">
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اپل
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سامسونگ
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    نوکیا
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    ایسوس
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    هواوی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    الجی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اچ تی سی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سونی
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <div class="bg-image">
+                                        <img src="/static/images/menu-main/digital.png" alt="">
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="main-menu-item category-menu-item menu-item-type-custom">
+                                <a href="#" class="main-menu-link-category">
+                                    <img src="/static/images/menu-main/category/makeup.png">
+                                    آرایشی و بهداشتی
+                                </a>
+                                <ul class="mega-menu-category sub-menu mega-menu-level-two" style="top: 50px;">
+                                    <li class="menu-category-item menu-item-type-custom menu-item">
+                                        <a href="#" class="menu-category-link-title">
+                                            موبایل
+                                        </a>
+                                        <ul class="sub-menu-category mega-menu-level-there">
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اپل
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سامسونگ
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    نوکیا
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    ایسوس
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    هواوی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    الجی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اچ تی سی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سونی
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-category-item menu-item-type-custom menu-item">
+                                        <a href="#" class="menu-category-link-title">
+                                            موبایل
+                                        </a>
+                                        <ul class="sub-menu-category mega-menu-level-there">
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اپل
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سامسونگ
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    نوکیا
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    ایسوس
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    هواوی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    الجی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اچ تی سی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سونی
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-category-item menu-item-type-custom menu-item">
+                                        <a href="#" class="menu-category-link-title">
+                                            موبایل
+                                        </a>
+                                        <ul class="sub-menu-category mega-menu-level-there">
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اپل
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سامسونگ
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    نوکیا
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    ایسوس
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    هواوی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    الجی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اچ تی سی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سونی
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <div class="bg-image">
+                                        <img src="/static/images/menu-main/cosmetic.png" alt="">
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="main-menu-item category-menu-item menu-item-type-custom">
+                                <a href="#" class="main-menu-link-category">
+                                    <img src="/static/images/menu-main/category/print.png">
+                                    ابزار و اداری
+                                </a>
+                            </li>
+                            <li class="main-menu-item category-menu-item menu-item-type-custom">
+                                <a href="#" class="main-menu-link-category">
+                                    <img src="/static/images/menu-main/category/suit.png">
+                                    مد و پوشاک
+                                </a>
+                            </li>
+                            <li class="main-menu-item category-menu-item menu-item-type-custom">
+                                <a href="#" class="main-menu-link-category">
+                                    <img src="/static/images/menu-main/category/home.png">
+                                    خانه و آشپزخانه
+                                </a>
+                                <ul class="mega-menu-category sub-menu mega-menu-level-two" style="top: 150px;">
+                                    <li class="menu-category-item menu-item-type-custom menu-item">
+                                        <a href="#" class="menu-category-link-title">
+                                            موبایل
+                                        </a>
+                                        <ul class="sub-menu-category mega-menu-level-there">
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اپل
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سامسونگ
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    نوکیا
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    ایسوس
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    هواوی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    الجی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اچ تی سی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سونی
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-category-item menu-item-type-custom menu-item">
+                                        <a href="#" class="menu-category-link-title">
+                                            موبایل
+                                        </a>
+                                        <ul class="sub-menu-category mega-menu-level-there">
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اپل
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سامسونگ
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    نوکیا
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    ایسوس
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    هواوی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    الجی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اچ تی سی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سونی
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-category-item menu-item-type-custom menu-item">
+                                        <a href="#" class="menu-category-link-title">
+                                            موبایل
+                                        </a>
+                                        <ul class="sub-menu-category mega-menu-level-there">
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اپل
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سامسونگ
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    نوکیا
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    ایسوس
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    هواوی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    الجی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    اچ تی سی
+                                                </a>
+                                            </li>
+                                            <li class="menu-category-item-there">
+                                                <a href="#">
+                                                    سونی
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <div class="bg-image">
+                                        <img src="/static/images/menu-main/kitchen.png" alt="">
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="main-menu-item category-menu-item menu-item-type-custom">
+                                <a href="#" class="main-menu-link-category">
+                                    <img src="/static/images/menu-main/category/edit.png">
+                                    لوازم و تحریر
+                                </a>
+                            </li>
+                            <li class="main-menu-item category-menu-item menu-item-type-custom">
+                                <a href="#" class="main-menu-link-category">
+                                    <img src="/static/images/menu-main/category/child.png">
+                                    کودک و نوزاد
+                                </a>
+                            </li>
+                            <li class="main-menu-item category-menu-item menu-item-type-custom">
+                                <a href="#" class="main-menu-link-category">
+                                    <img src="/static/images/menu-main/category/cup.png">
+                                    ورزشی و اسپرت
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    {% comment %} <!-- slider-main---------------------------> {% endcomment %}
+    <div class="col-lg-9 col-md-9 col-xs-12 pl">
+        <div class="slider-main-container d-block">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/static/images/slider-main/sm-1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/static/images/slider-main/sm-2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/static/images/slider-main/sm-3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/static/images/slider-main/sm-4.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/static/images/slider-main/sm-5.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="fa fa-angle-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="fa fa-angle-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- moment-slider-------------------------->
+
+    {% comment %} <!-- slider-amazing-------------------------> {% endcomment %}
+    <div class="col-12">
+        <div class="slider-widget-products slider-content-tabs slider-amazing-product">
+            <div class="widget widget-product card slider-content-tabs">
+                <header class="card-header header-product">
+                    <span class="title-one">محصولات شگفت انگیز</span>
+                    <h3 class="card-title"></h3>
+                </header>
+                <div class="product-carousel product-amazing owl-carousel owl-theme owl-rtl owl-loaded owl-drag">
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage"
+                            style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1162px;">
+                            <div class="owl-item tab-item active" style="width: 222.313px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="#" class="d-block hover-img-link">
+                                        <img src="/static/images/slider-amazing/as-1.jpg" class="img-fluid" alt="">
+                                    </a>
+                                    <h2 class="post-title">
+                                        <a href="#">
+                                            لپ تاپ ۱۵ اینچی ایسوس مدل VivoBook Flip TP510UQ – C
+                                        </a>
+                                    </h2>
+                                    <div class="price">
+                                        <del><span>12,000,000<span>تومان</span></span></del>
+                                        <ins><span>11,180,000<span>تومان</span></span></ins>
+                                    </div>
+                                    <div class="countdown-timer">
+                                        <div class="countdown h4" data-date-time="10/10/2025 12:00"
+                                            data-labels="{&quot;label-day&quot;: &quot;روز&quot;, &quot;label-hour&quot;: &quot;ساعت&quot;, &quot;label-minute&quot;: &quot;دقیقه&quot;, &quot;label-second&quot;: &quot;ثانیه&quot;}">
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">155</div>
+                                                <div class="countdown-label">روز</div>
+                                            </div>
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">10</div>
+                                                <div class="countdown-label">ساعت</div>
+                                            </div>
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">16</div>
+                                                <div class="countdown-label">دقیقه</div>
+                                            </div>
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">01</div>
+                                                <div class="countdown-label">ثانیه</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item tab-item active" style="width: 222.313px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="#" class="d-block hover-img-link">
+                                        <img src="/static/images/slider-amazing/as-2.jpg" class="img-fluid" alt="">
+                                    </a>
+                                    <h2 class="post-title">
+                                        <a href="#">
+                                            یخچال و فریزر سامسونگ مدل HM34
+                                        </a>
+                                    </h2>
+                                    <div class="price">
+                                        <del><span>9,000,000<span>تومان</span></span></del>
+                                        <ins><span>8,500,000<span>تومان</span></span></ins>
+                                    </div>
+                                    <div class="countdown-timer">
+                                        <div class="countdown h4" data-date-time="10/10/2025 12:00"
+                                            data-labels="{&quot;label-day&quot;: &quot;روز&quot;, &quot;label-hour&quot;: &quot;ساعت&quot;, &quot;label-minute&quot;: &quot;دقیقه&quot;, &quot;label-second&quot;: &quot;ثانیه&quot;}">
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">155</div>
+                                                <div class="countdown-label">روز</div>
+                                            </div>
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">10</div>
+                                                <div class="countdown-label">ساعت</div>
+                                            </div>
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">16</div>
+                                                <div class="countdown-label">دقیقه</div>
+                                            </div>
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">01</div>
+                                                <div class="countdown-label">ثانیه</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item tab-item active" style="width: 222.313px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="#" class="d-block hover-img-link">
+                                        <img src="/static/images/slider-amazing/as-3.jpg" class="img-fluid" alt="">
+                                    </a>
+                                    <h2 class="post-title">
+                                        <a href="#">
+                                            کامپیوتر همه کاره 21.5 اینچی ایسوس مدل AIO V222UAK-B
+                                        </a>
+                                    </h2>
+                                    <div class="price">
+                                        <del><span>12,000,000<span>تومان</span></span></del>
+                                        <ins><span>11,180,000<span>تومان</span></span></ins>
+                                    </div>
+                                    <div class="countdown-timer">
+                                        <div class="countdown h4" data-date-time="10/10/2025 12:00"
+                                            data-labels="{&quot;label-day&quot;: &quot;روز&quot;, &quot;label-hour&quot;: &quot;ساعت&quot;, &quot;label-minute&quot;: &quot;دقیقه&quot;, &quot;label-second&quot;: &quot;ثانیه&quot;}">
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">155</div>
+                                                <div class="countdown-label">روز</div>
+                                            </div>
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">10</div>
+                                                <div class="countdown-label">ساعت</div>
+                                            </div>
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">16</div>
+                                                <div class="countdown-label">دقیقه</div>
+                                            </div>
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">01</div>
+                                                <div class="countdown-label">ثانیه</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item tab-item active" style="width: 222.313px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="#" class="d-block hover-img-link">
+                                        <img src="/static/images/slider-amazing/as-4.jpg" class="img-fluid" alt="">
+                                    </a>
+                                    <h2 class="post-title">
+                                        <a href="#">
+                                            شارژر بی سیم مدل EP-NG930
+                                        </a>
+                                    </h2>
+                                    <div class="price">
+                                        <del><span>8,000,000<span>تومان</span></span></del>
+                                        <ins><span>6,500,000<span>تومان</span></span></ins>
+                                    </div>
+                                    <div class="countdown-timer">
+                                        <div class="countdown h4" data-date-time="10/10/2025 12:00"
+                                            data-labels="{&quot;label-day&quot;: &quot;روز&quot;, &quot;label-hour&quot;: &quot;ساعت&quot;, &quot;label-minute&quot;: &quot;دقیقه&quot;, &quot;label-second&quot;: &quot;ثانیه&quot;}">
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">155</div>
+                                                <div class="countdown-label">روز</div>
+                                            </div>
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">10</div>
+                                                <div class="countdown-label">ساعت</div>
+                                            </div>
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">16</div>
+                                                <div class="countdown-label">دقیقه</div>
+                                            </div>
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">01</div>
+                                                <div class="countdown-label">ثانیه</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item tab-item" style="width: 222.313px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="#" class="d-block hover-img-link">
+                                        <img src="/static/images/slider-amazing/as-5.jpg" class="img-fluid" alt="">
+                                    </a>
+                                    <h2 class="post-title">
+                                        <a href="#">
+                                            تلویزیون ال ای دی هوشمند سامسونگ مدل 55NU7900 سایز 55 اینچ
+                                        </a>
+                                    </h2>
+                                    <div class="price">
+                                        <del><span>14,500,000<span>تومان</span></span></del>
+                                        <ins><span>13,500,000<span>تومان</span></span></ins>
+                                    </div>
+                                    <div class="countdown-timer">
+                                        <div class="countdown h4" data-date-time="10/10/2025 12:00"
+                                            data-labels="{&quot;label-day&quot;: &quot;روز&quot;, &quot;label-hour&quot;: &quot;ساعت&quot;, &quot;label-minute&quot;: &quot;دقیقه&quot;, &quot;label-second&quot;: &quot;ثانیه&quot;}">
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">155</div>
+                                                <div class="countdown-label">روز</div>
+                                            </div>
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">10</div>
+                                                <div class="countdown-label">ساعت</div>
+                                            </div>
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">16</div>
+                                                <div class="countdown-label">دقیقه</div>
+                                            </div>
+                                            <div class="countdown-item">
+                                                <div class="countdown-value">01</div>
+                                                <div class="countdown-label">ثانیه</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9 col-md-9 col-xs-12 pl">
+        <div class="content-widget-amazing mt-4 cwa-p">
+            <section id="amazing-slider" class="carousel slide carousel-fade card" data-ride="carousel">
+                <div class="row m-0">
+                    <ol class="carousel-indicators carousel-indicators-order col-lg-3">
+                        <li class="carousel-item-li active" data-target="#amazing-slider" data-slide-to="0">
+                        </li>
+                        <li class="carousel-item-li" data-target="#amazing-slider" data-slide-to="1" class="">
+                        </li>
+                        <li class="carousel-item-li" data-target="#amazing-slider" data-slide-to="2" class="">
+                        </li>
+                        <li class="carousel-item-li" data-target="#amazing-slider" data-slide-to="3" class="">
+                        </li>
+                        <li class="carousel-item-li" data-target="#amazing-slider" data-slide-to="4" class="">
+                        </li>
+                    </ol>
+                    <div class="carousel-inner p-0 col-12 col-lg-11">
+                        <div class="carousel-item active">
+                            <div class="row m-0">
+                                <div class="right-col col-5 d-flex align-items-center">
+                                    <a class="w-100 text-center img-link-amazing" href="#">
+                                        <img src="/static/images/slider-amazing/as-1.jpg" class="img-fluid" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-7">
+                                    <div class="carousel-content">
+                                        <div class="discount">
+                                            <span class="discount-percent">6.2
+                                                <i class="fa fa-percent"></i>
+                                            </span>
+                                        </div>
+                                        <h2 class="product-title">
+                                            <a href="#"> لپ تاپ ۱۵ اینچی ایسوس مدل VivoBook Flip TP510UQ – C </a>
+                                        </h2>
+                                        <div class="price text-center">
+                                            <del><span>12,000,000<span>تومان</span></span></del>
+                                            <ins><span>11,180,000<span>تومان</span></span></ins>
+                                        </div>
+                                        <ul class="list-group">
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check"></i>
+                                                <span class="title">ظرفیت حافظه داخلی: </span>
+                                                <span class="text">یک ترابایت </span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check"></i>
+                                                <span class="title">ظرفیت حافظه رم: </span>
+                                                <span class="text">8 گیگابایت </span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check"></i>
+                                                <span class="title">سری پردازنده: </span>
+                                                <span class="text">Core i5 </span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check"></i>
+                                                <span class="title">دقت صفحه نمایش: </span>
+                                                <span class="text"> 1080 × 1920 </span>
+                                            </li>
+                                        </ul>
+                                        <div class="countdown-timer">
+                                            <div class="countdown h4" data-date-time="10/10/2025 12:00"
+                                                data-labels='{"label-day": "روز", "label-hour": "ساعت", "label-minute": "دقیقه", "label-second": "ثانیه"}'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row m-0">
+                                <div class="right-col col-5 d-flex align-items-center">
+                                    <a class="w-100 text-center img-link-amazing" href="#">
+                                        <img src="/static/images/slider-amazing/as-2.jpg" class="img-fluid" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-7">
+                                    <div class="carousel-content">
+                                        <div class="discount">
+                                            <span class="discount-percent">3.2
+                                                <i class="fa fa-percent"></i>
+                                            </span>
+                                        </div>
+                                        <h2 class="product-title">
+                                            <a href="#"> یخچال و فریزر سامسونگ مدل HM34 </a>
+                                        </h2>
+                                        <div class="price text-center">
+                                            <del><span>9,000,000<span>تومان</span></span></del>
+                                            <ins><span>8,500,000<span>تومان</span></span></ins>
+                                        </div>
+                                        <ul class="list-group">
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check"></i>
+                                                <span class="title">قفل کودک: </span>
+                                                <span class="text">دارد</span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check"></i>
+                                                <span class="title">اخطار باز ماندن درب: </span>
+                                                <span class="text">بله</span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check"></i>
+                                                <span class="title">آبسردکن: </span>
+                                                <span class="text">دارد</span>
+                                            </li>
+                                        </ul>
+                                        <div class="countdown-timer">
+                                            <div class="countdown h4" data-date-time="10/10/2025 12:00"
+                                                data-labels='{"label-day": "روز", "label-hour": "ساعت", "label-minute": "دقیقه", "label-second": "ثانیه"}'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row m-0">
+                                <div class="right-col col-5 d-flex align-items-center">
+                                    <a class="w-100 text-center img-link-amazing" href="#">
+                                        <img src="/static/images/slider-amazing/as-3.jpg" class="img-fluid" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-7">
+                                    <div class="carousel-content">
+                                        <div class="discount">
+                                            <span class="discount-percent">2.2
+                                                <i class="fa fa-percent"></i>
+                                            </span>
+                                        </div>
+                                        <h2 class="product-title">
+                                            <a href="#">کامپیوتر همه کاره 21.5 اینچی ایسوس مدل AIO V222UAK-B</a>
+                                        </h2>
+                                        <div class="price text-center">
+                                            <del><span>12,000,000<span>تومان</span></span></del>
+                                            <ins><span>11,180,000<span>تومان</span></span></ins>
+                                        </div>
+                                        <ul class="list-group">
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check"></i>
+                                                <span class="title">ظرفیت حافظه داخلی: </span>
+                                                <span class="text">500 گیگابایت</span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check"></i>
+                                                <span class="title">ظرفیت حافظه رم: </span>
+                                                <span class="text">4 گیگابایت </span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check"></i>
+                                                <span class="title">سری پردازنده: </span>
+                                                <span class="text">Pentium </span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check"></i>
+                                                <span class="title">دقت صفحه نمایش: </span>
+                                                <span class="text"> 1080 × 1920 </span>
+                                            </li>
+                                        </ul>
+                                        <div class="countdown-timer">
+                                            <div class="countdown h4" data-date-time="10/10/2025 12:00"
+                                                data-labels='{"label-day": "روز", "label-hour": "ساعت", "label-minute": "دقیقه", "label-second": "ثانیه"}'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row m-0">
+                                <div class="right-col col-5 d-flex align-items-center">
+                                    <a class="w-100 text-center img-link-amazing" href="#">
+                                        <img src="/static/images/slider-amazing/as-4.jpg" class="img-fluid" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-7">
+                                    <div class="carousel-content">
+                                        <div class="discount">
+                                            <span class="discount-percent">4.2
+                                                <i class="fa fa-percent"></i>
+                                            </span>
+                                        </div>
+                                        <h2 class="product-title">
+                                            <a href="#">
+                                                شارژر بی سیم مدل EP-NG930
+                                            </a>
+                                        </h2>
+                                        <div class="price text-center">
+                                            <del><span>8,000,000<span>تومان</span></span></del>
+                                            <ins><span>6,500,000<span>تومان</span></span></ins>
+                                        </div>
+                                        <ul class="list-group">
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check"></i>
+                                                <span class="title">شدت جریان خروجی: </span>
+                                                <span class="text"> 2.0 آمپر مخصوص تبلت و موبایل </span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check"></i>
+                                                <span class="title">تعداد درگاه خروجی: </span>
+                                                <span class="text">1</span>
+                                            </li>
+                                        </ul>
+                                        <div class="countdown-timer">
+                                            <div class="countdown h4" data-date-time="10/10/2025 12:00"
+                                                data-labels='{"label-day": "روز", "label-hour": "ساعت", "label-minute": "دقیقه", "label-second": "ثانیه"}'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item  finished">
+                            <div class="row m-0">
+                                <div class="right-col col-5 d-flex align-items-center">
+                                    <a class="w-100 text-center img-link-amazing" href="#">
+                                        <img src="/static/images/slider-amazing/as-5.jpg" class="img-fluid" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-7">
+                                    <div class="carousel-content">
+                                        <div class="discount">
+                                            <span class="discount-percent">5.2
+                                                <i class="fa fa-percent"></i>
+                                            </span>
+                                        </div>
+                                        <h2 class="product-title">
+                                            <a href="#">
+                                                تلویزیون ال ای دی هوشمند سامسونگ مدل 55NU7900 سایز 55 اینچ
+                                            </a>
+                                        </h2>
+                                        <div class="price text-center">
+                                            <del><span>14,500,000<span>تومان</span></span></del>
+                                            <ins><span>13,500,000<span>تومان</span></span></ins>
+                                        </div>
+                                        <ul class="list-group">
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check"></i>
+                                                <span class="title">درگاه USB: </span>
+                                                <span class="text">دارد </span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check"></i>
+                                                <span class="title">کیفیت تصویر: </span>
+                                                <span class="text">Ultra HD - 4K</span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check"></i>
+                                                <span class="title">رابط هوشمند: </span>
+                                                <span class="text">دارد </span>
+                                            </li>
+                                        </ul>
+                                        <div class="countdown-timer">
+                                            <div class="countdown h4" data-date-time="10/10/2025 12:00"
+                                                data-labels='{"label-day": "روز", "label-hour": "ساعت", "label-minute": "دقیقه", "label-second": "ثانیه"}'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-12 pr">
+        <div class="slider-moments mt-4">
+            <div class="widget-suggestion widget card mb-0">
+                <header class="card-header promo-single-headline">
+                    <h3 class="card-title float-none">پیشنهاد لحظه‌ای</h3>
+                </header>
+                <div id="suggestion-slider" class="owl-carousel owl-theme owl-rtl owl-loaded owl-drag">
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage"
+                            style="transform: translate3d(1369px, 0px, 0px); transition: all 0.25s ease 0s; width: 2190px;">
+                            <div class="owl-item cloned" style="width: 273.75px;">
+                                <div class="item">
+                                    <a href="#">
+                                        <img src="/static/images/slider-moment/sm-1.jpg" class="w-100 mt-5" alt="">
+                                    </a>
+                                    <h3 class="product-title">
+                                        <a href="#"> تیشرت آستین کوتاه مردانه مدل T41 </a>
+                                    </h3>
+                                    <div class="price mt-1">
+                                        <span class="amount">۲۳,۰۰۰
+                                            <span>تومان</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 273.75px;">
+                                <div class="item">
+                                    <a href="#">
+                                        <img src="/static/images/slider-moment/sm-2.jpg" class="w-100 mt-5" alt="">
+                                    </a>
+                                    <h3 class="product-title">
+                                        <a href="#">تی شرت آستین کوتاه تارکان کد btt 152-1</a>
+                                    </h3>
+                                    <div class="price mt-1">
+                                        <span class="amount">۵۹,۰۰۰
+                                            <span>تومان</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 273.75px;">
+                                <div class="item">
+                                    <a href="#">
+                                        <img src="/static/images/slider-moment/sm-3.jpg" class="w-100 mt-5" alt="">
+                                    </a>
+                                    <h3 class="product-title">
+                                        <a href="#"> لپ تاپ 17 اینچی ایسوس مدل VivoBook A712FB-P </a>
+                                    </h3>
+                                    <div class="price mt-1">
+                                        <span class="amount">۱۳,۰۰۰,۰۰۰
+                                            <span>تومان</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 273.75px;">
+                                <div class="item">
+                                    <a href="#">
+                                        <img src="/static/images/slider-moment/sm-4.jpg" class="w-100 mt-5" alt="">
+                                    </a>
+                                    <h3 class="product-title">
+                                        <a href="#"> لپ تاپ 16 اینچی اپل مدل MacBook Pro MVVK2 2019 همراه با تاچ بار
+                                        </a>
+                                    </h3>
+                                    <div class="price mt-1">
+                                        <span class="amount">۴۷,۰۰۰,۰۰۰
+                                            <span>تومان</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 273.75px;">
+                                <div class="item">
+                                    <a href="#">
+                                        <img src="/static/images/slider-moment/sm-5.jpg" class="w-100 mt-5" alt="">
+                                    </a>
+                                    <h3 class="product-title">
+                                        <a href="#">گوشی موبایل سامسونگ مدل Galaxy S10 SM-G973F/DS دو سیم کارت ظرفیت
+                                            128 گیگابایت
+                                        </a>
+                                    </h3>
+                                    <div class="price mt-1">
+                                        <span class="amount">۱۱,۰۰۰,۰۰۰
+                                            <span>تومان</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="progressBar">
+                    <div class="slide-progress" style="width: 100%; transition: width 5000ms ease 0s;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% comment %} <!-- adplacement---------------------------> {% endcomment %}
+    <div class="adplacement-container-row">
+        <div class="col-6 col-lg-3 pr">
+            <a href="#" class="adplacement-item">
+                <div class="adplacement-sponsored_box">
+                    <img src="/static/images/adplacement/a-4.jpg">
+                </div>
+            </a>
+        </div>
+        <div class="col-6 col-lg-3 pr">
+            <a href="#" class="adplacement-item">
+                <div class="adplacement-sponsored_box">
+                    <img src="/static/images/adplacement/a-5.jpg">
+                </div>
+            </a>
+        </div>
+        <div class="col-6 col-lg-3 pr">
+            <a href="#" class="adplacement-item">
+                <div class="adplacement-sponsored_box">
+                    <img src="/static/images/adplacement/a-6.jpg">
+                </div>
+            </a>
+        </div>
+        <div class="col-6 col-lg-3 pr">
+            <a href="#" class="adplacement-item">
+                <div class="adplacement-sponsored_box">
+                    <img src="/static/images/adplacement/a-7.jpg">
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- slider-product-------------------------------->
+<div class="col-lg-12 col-md-12 col-xs-12 pr order-1 d-block">
+    <div class="slider-widget-products slider-content-tabs">
+        <div class="widget widget-product card slider-content-tabs">
+            <header class="card-header header-product">
+                <span class="title-one">لوازم خانگی</span>
+                <h3 class="card-title"></h3>
+            </header>
+            <div class="product-carousel owl-carousel owl-theme owl-rtl owl-loaded owl-drag">
+                <div class="owl-stage-outer">
+                    <div class="owl-stage"
+                        style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2234px;">
+                        <div class="owl-item active tab-item" style="width: 309.083px; margin-left: 10px;">
+                            <div class="item">
+                                <a href="#" class="d-block hover-img-link" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    <img src="/static/images/slider-product/Stove-lopez.jpg" class="img-fluid"
+                                        alt="">
+                                        <span class="icon-view">
+                                            <strong><i class="fa fa-eye"></i></strong>
+                                        </span>
+                                </a>
+                                <h2 class="post-title">
+                                    <a href="#">
+                                        اجاق گاز طرح فر لوپز مدل 10000S
+                                    </a>
+                                </h2>
+                                <div class="price">
+                                    <del><span>۱۲,۰۰۰,۰۰۰<span>تومان</span></span></del>
+                                    <ins><span>۱۰,۵۰۰,۰۰۰<span>تومان</span></span></ins>
+                                </div>
+                                <div class="actions">
+                                    <ul>
+                                        <li class="action-item like">
+                                            <button class="btn btn-light add-product-wishes" type="submit">
+                                                <i class="fa fa-heart-o"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item compare">
+                                            <button class="btn btn-light btn-compare" type="submit">
+                                                <i class="fa fa-random"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item add-to-cart">
+                                            <button class="btn btn-light btn-add-to-cart" type="submit">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item active tab-item" style="width: 309.083px; margin-left: 10px;">
+                            <div class="item">
+                                <a href="#" class="d-block hover-img-link" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    <img src="/static/images/slider-product/SWF-40R.jpg" class="img-fluid" alt="">
+                                    <span class="icon-view">
+                                        <strong><i class="fa fa-eye"></i></strong>
+                                    </span>
+                                </a>
+                                <h2 class="post-title">
+                                    <a href="#">
+                                        آون توستر سان ورد مدل SWF-40R
+                                    </a>
+                                </h2>
+                                <div class="price">
+                                    <del><span>۳,۲۰۰,۰۰۰<span>تومان</span></span></del>
+                                    <ins><span>۲,۵۰۰,۰۰۰<span>تومان</span></span></ins>
+                                </div>
+                                <div class="actions">
+                                    <ul>
+                                        <li class="action-item like">
+                                            <button class="btn btn-light add-product-wishes" type="submit">
+                                                <i class="fa fa-heart-o"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item compare">
+                                            <button class="btn btn-light btn-compare" type="submit">
+                                                <i class="fa fa-random"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item add-to-cart">
+                                            <button class="btn btn-light btn-add-to-cart" type="submit">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item active tab-item" style="width: 309.083px; margin-left: 10px;">
+                            <div class="item">
+                                <a href="#" class="d-block hover-img-link" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    <img src="/static/images/slider-product/ECM2013.jpg" class="img-fluid" alt="">
+                                    <span class="icon-view">
+                                        <strong><i class="fa fa-eye"></i></strong>
+                                    </span>
+                                </a>
+                                <h2 class="post-title">
+                                    <a href="#">
+                                        اسپرسوساز مباشی مدل ECM2013
+                                    </a>
+                                </h2>
+                                <div class="price">
+                                    <del><span>۳,۵۰۰,۰۰۰<span>تومان</span></span></del>
+                                    <ins><span>۲,۰۰۰,۰۰۰<span>تومان</span></span></ins>
+                                </div>
+                                <div class="actions">
+                                    <ul>
+                                        <li class="action-item like">
+                                            <button class="btn btn-light add-product-wishes" type="submit">
+                                                <i class="fa fa-heart-o"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item compare">
+                                            <button class="btn btn-light btn-compare" type="submit">
+                                                <i class="fa fa-random"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item add-to-cart">
+                                            <button class="btn btn-light btn-add-to-cart" type="submit">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item active tab-item" style="width: 309.083px; margin-left: 10px;">
+                            <div class="item">
+                                <a href="#" class="d-block hover-img-link" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    <img src="/static/images/slider-product/DNR 290T-366T.jpg" class="img-fluid"
+                                        alt="">
+                                        <span class="icon-view">
+                                            <strong><i class="fa fa-eye"></i></strong>
+                                        </span>
+                                </a>
+                                <h2 class="post-title">
+                                    <a href="#">
+                                        یخچال و فریزر دو قلوی دونار مدل DNR 290T-366T
+                                    </a>
+                                </h2>
+                                <div class="price">
+                                    <del><span>۶,۵۰۰,۰۰۰<span>تومان</span></span></del>
+                                    <ins><span>۴,۲۰۰,۰۰۰<span>تومان</span></span></ins>
+                                </div>
+                                <div class="actions">
+                                    <ul>
+                                        <li class="action-item like">
+                                            <button class="btn btn-light add-product-wishes" type="submit">
+                                                <i class="fa fa-heart-o"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item compare">
+                                            <button class="btn btn-light btn-compare" type="submit">
+                                                <i class="fa fa-random"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item add-to-cart">
+                                            <button class="btn btn-light btn-add-to-cart" type="submit">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item tab-item" style="width: 309.083px; margin-left: 10px;">
+                            <div class="item">
+                                <a href="#" class="d-block hover-img-link" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    <img src="/static/images/slider-product/Avocado.jpg" class="img-fluid" alt="">
+                                    <span class="icon-view">
+                                        <strong><i class="fa fa-eye"></i></strong>
+                                    </span>
+                                </a>
+                                <h2 class="post-title">
+                                    <a href="#">
+                                        آب میوه گیری پارس خزر مدل Avocado
+                                    </a>
+                                </h2>
+                                <div class="price">
+                                    <del><span>۷,۵۰۰,۰۰۰<span>تومان</span></span></del>
+                                    <ins><span>۶,۰۰۰,۰۰۰<span>تومان</span></span></ins>
+                                </div>
+                                <div class="actions">
+                                    <ul>
+                                        <li class="action-item like">
+                                            <button class="btn btn-light add-product-wishes" type="submit">
+                                                <i class="fa fa-heart-o"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item compare">
+                                            <button class="btn btn-light btn-compare" type="submit">
+                                                <i class="fa fa-random"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item add-to-cart">
+                                            <button class="btn btn-light btn-add-to-cart" type="submit">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-12 col-md-12 col-xs-12 pr order-1 d-block">
+    <div class="slider-widget-products slider-content-tabs">
+        <div class="widget widget-product card slider-content-tabs">
+            <header class="card-header header-product">
+                <span class="title-one">گوشی موبایل</span>
+                <h3 class="card-title"></h3>
+            </header>
+            <div class="product-carousel owl-carousel owl-theme owl-rtl owl-loaded owl-drag">
+                <div class="owl-stage-outer">
+                    <div class="owl-stage"
+                        style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1534px;">
+                        <div class="owl-item active tab-item" style="width: 296.75px; margin-left: 10px;">
+                            <div class="item">
+                                <a href="#" class="d-block hover-img-link" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    <img src="/static/images/slider-product/Samsung-S10Plus.jpg" class="img-fluid"
+                                        alt="">
+                                        <span class="icon-view">
+                                            <strong><i class="fa fa-eye"></i></strong>
+                                        </span>
+                                </a>
+                                <h2 class="post-title">
+                                    <a href="#">
+                                        سامسونگ گلکسی اس 10 پلاس – 128 گیگابایت – دو سیم کارت
+                                    </a>
+                                </h2>
+                                <div class="price">
+                                    <del><span>۱۲,۰۰۰,۰۰۰<span>تومان</span></span></del>
+                                    <ins><span>۱۰,۵۰۰,۰۰۰<span>تومان</span></span></ins>
+                                </div>
+                                <div class="actions">
+                                    <ul>
+                                        <li class="action-item like">
+                                            <button class="btn btn-light add-product-wishes" type="submit">
+                                                <i class="fa fa-heart-o"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item compare">
+                                            <button class="btn btn-light btn-compare" type="submit">
+                                                <i class="fa fa-random"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item add-to-cart">
+                                            <button class="btn btn-light btn-add-to-cart" type="submit">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item active tab-item" style="width: 296.75px; margin-left: 10px;">
+                            <div class="item">
+                                <a href="#" class="d-block hover-img-link" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    <img src="/static/images/slider-product/huawei-p-smart.jpg" class="img-fluid"
+                                        alt="">
+                                        <span class="icon-view">
+                                            <strong><i class="fa fa-eye"></i></strong>
+                                        </span>
+                                </a>
+                                <h2 class="post-title">
+                                    <a href="#">
+                                        هوآوی مدل P Smart 2019 دو سیم کارت ظرفیت 64 گیگابایت
+                                    </a>
+                                </h2>
+                                <div class="price">
+                                    <del><span>۳,۲۰۰,۰۰۰<span>تومان</span></span></del>
+                                    <ins><span>۲,۵۰۰,۰۰۰<span>تومان</span></span></ins>
+                                </div>
+                                <div class="actions">
+                                    <ul>
+                                        <li class="action-item like">
+                                            <button class="btn btn-light add-product-wishes" type="submit">
+                                                <i class="fa fa-heart-o"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item compare">
+                                            <button class="btn btn-light btn-compare" type="submit">
+                                                <i class="fa fa-random"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item add-to-cart">
+                                            <button class="btn btn-light btn-add-to-cart" type="submit">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item active tab-item" style="width: 296.75px; margin-left: 10px;">
+                            <div class="item">
+                                <a href="#" class="d-block hover-img-link" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    <img src="/static/images/slider-product/iphone-xs-max-space.jpg"
+                                        class="img-fluid" alt="">
+                                        <span class="icon-view">
+                                            <strong><i class="fa fa-eye"></i></strong>
+                                        </span>
+                                </a>
+                                <h2 class="post-title">
+                                    <a href="#">
+                                        اپل آیفون ایکس اس مکس – 256 گیگابایت – دو سیم کارت
+                                    </a>
+                                </h2>
+                                <div class="price">
+                                    <del><span>۳,۵۰۰,۰۰۰<span>تومان</span></span></del>
+                                    <ins><span>۲,۰۰۰,۰۰۰<span>تومان</span></span></ins>
+                                </div>
+                                <div class="actions">
+                                    <ul>
+                                        <li class="action-item like">
+                                            <button class="btn btn-light add-product-wishes" type="submit">
+                                                <i class="fa fa-heart-o"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item compare">
+                                            <button class="btn btn-light btn-compare" type="submit">
+                                                <i class="fa fa-random"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item add-to-cart">
+                                            <button class="btn btn-light btn-add-to-cart" type="submit">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item active tab-item" style="width: 296.75px; margin-left: 10px;">
+                            <div class="item">
+                                <a href="#" class="d-block hover-img-link" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    <img src="/static/images/slider-product/honer.jpg" class="img-fluid" alt="">
+                                    <span class="icon-view">
+                                        <strong><i class="fa fa-eye"></i></strong>
+                                    </span>
+                                </a>
+                                <h2 class="post-title">
+                                    <a href="#">
+                                        هواوی هانر ویوو 20 – 256 گیگابایت – دو سیم کارت
+                                    </a>
+                                </h2>
+                                <div class="price">
+                                    <del><span>۶,۵۰۰,۰۰۰<span>تومان</span></span></del>
+                                    <ins><span>۴,۲۰۰,۰۰۰<span>تومان</span></span></ins>
+                                </div>
+                                <div class="actions">
+                                    <ul>
+                                        <li class="action-item like">
+                                            <button class="btn btn-light add-product-wishes" type="submit">
+                                                <i class="fa fa-heart-o"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item compare">
+                                            <button class="btn btn-light btn-compare" type="submit">
+                                                <i class="fa fa-random"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item add-to-cart">
+                                            <button class="btn btn-light btn-add-to-cart" type="submit">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item tab-item" style="width: 296.75px; margin-left: 10px;">
+                            <div class="item">
+                                <a href="#" class="d-block hover-img-link" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    <img src="/static/images/slider-product/huawei.jpg" class="img-fluid" alt="">
+                                    <span class="icon-view">
+                                        <strong><i class="fa fa-eye"></i></strong>
+                                    </span>
+                                </a>
+                                <h2 class="post-title">
+                                    <a href="#">
+                                        هواوی پی 20 پرو 128 گیگابایت – دو سیم کارت
+                                    </a>
+                                </h2>
+                                <div class="price">
+                                    <del><span>۷,۵۰۰,۰۰۰<span>تومان</span></span></del>
+                                    <ins><span>۶,۰۰۰,۰۰۰<span>تومان</span></span></ins>
+                                </div>
+                                <div class="actions">
+                                    <ul>
+                                        <li class="action-item like">
+                                            <button class="btn btn-light add-product-wishes" type="submit">
+                                                <i class="fa fa-heart-o"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item compare">
+                                            <button class="btn btn-light btn-compare" type="submit">
+                                                <i class="fa fa-random"></i>
+                                            </button>
+                                        </li>
+                                        <li class="action-item add-to-cart">
+                                            <button class="btn btn-light btn-add-to-cart" type="submit">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-lg-6 pr">
+                            <div class="thum-img">
+                                <div class="widget widget-product card mb-0">
+                                    <div
+                                        class="product-carousel-more owl-carousel owl-theme owl-rtl owl-loaded owl-drag">
+                                        <div class="owl-stage-outer">
+                                            <div class="owl-stage"
+                                                style="transform: translate3d(1652px, 0px, 0px); transition: all 0.25s ease 0s; width: 2065px;">
+                                                <div class="owl-item" style="width: 403px; margin-left: 10px;">
+                                                    <div class="item">
+                                                        <a href="#" class="d-block hover-img-link"
+                                                            data-toggle="modal" data-target="#exampleModal">
+                                                            <div class="zoom-box">
+                                                                <img src="/static/images/slider-product/computer-appel.jpg"
+                                                                    width="200" height="150" />
+                                                                <div class="discount-m">
+                                                                    <span>10%</span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="owl-item" style="width: 403px; margin-left: 10px;">
+                                                    <div class="item">
+                                                        <a href="#" class="d-block hover-img-link"
+                                                            data-toggle="modal" data-target="#exampleModal">
+                                                            <div class="zoom-box">
+                                                                <img src="/static/images/slider-product/computer-appel.jpg"
+                                                                    width="200" height="150" />
+                                                                <div class="discount-m">
+                                                                    <span>10%</span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="owl-item" style="width: 403px; margin-left: 10px;">
+                                                    <div class="item">
+                                                        <a href="#" class="d-block hover-img-link"
+                                                            data-toggle="modal" data-target="#exampleModal">
+                                                            <div class="zoom-box">
+                                                                <img src="/static/images/slider-product/computer-appel.jpg"
+                                                                    width="200" height="150" />
+                                                                <div class="discount-m">
+                                                                    <span>10%</span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="owl-item" style="width: 403px; margin-left: 10px;">
+                                                    <div class="item">
+                                                        <a href="#" class="d-block hover-img-link"
+                                                            data-toggle="modal" data-target="#exampleModal">
+                                                            <div class="zoom-box">
+                                                                <img src="/static/images/slider-product/computer-appel.jpg"
+                                                                    width="200" height="150" />
+                                                                <div class="discount-m">
+                                                                    <span>10%</span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="owl-item active"
+                                                    style="width: 403px; margin-left: 10px;">
+                                                    <div class="item">
+                                                        <a href="#" class="d-block hover-img-link"
+                                                            data-toggle="modal" data-target="#exampleModal">
+                                                            <div class="zoom-box">
+                                                                <img src="/static/images/slider-product/computer-appel.jpg"
+                                                                    width="200" height="150" />
+                                                                <div class="discount-m">
+                                                                    <span>10%</span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 pr">
+                            <div class="product-box-modal-title">
+                                <h2 class="post-title">
+                                    <a href="#">
+                                        کامپیوتر همه کاره 27 اینچی اپل مدل iMac CTO - A 2019 با صفحه نمایش رتینا 5K
+                                    </a>
+                                </h2>
+                            </div>
+                            <div class="small-gutters align-items-stretch mb-4">
+                                <div class="col-lg-12 pr-0 pl-0 pr">
+                                    <div class="product-box-modal_price mt-12 mt-auto">
+                                        <div class="price">
+                                            <del><span>۳,۵۰۰,۰۰۰<span>تومان</span></span></del>
+                                            <ins><span>۲,۰۰۰,۰۰۰<span>تومان</span></span></ins>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="small-gutters">
+                                    <div class="col-lg-12 mb-8 pr-0 pl-0 pr mt-3">
+                                        <div class="product-box_action">
+                                            <button class="btn btn-gradient-primary add-to-cart"
+                                                type="submit">افزودن به سبد</button>
+                                            <a href="#" class="btn btn-outline-dark btn-block">مشاهده جزئیات</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% comment %} <!-- adplacement---------------------------> {% endcomment %}
+    <div class="container-main">
+        <div class="adplacement-container-row">
+            <div class="col-6 col-lg-6 pr">
+                <a href="#" class="adplacement-item">
+                    <div class="adplacement-sponsored_box">
+                        <img src="/static/images/adplacement/a-9.jpg">
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-lg-6 pr">
+                <a href="#" class="adplacement-item">
+                    <div class="adplacement-sponsored_box">
+                        <img src="/static/images/adplacement/a-11.jpg">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% comment %} <!-- slider-product-------------------------------> {% endcomment %}
+    <div class="col-lg-12 col-md-12 col-xs-12 pr order-1 d-block">
+        <div class="slider-widget-products slider-content-tabs">
+            <div class="widget widget-product card slider-content-tabs">
+                <header class="card-header header-product">
+                    <span class="title-one">کامپیوتر و لپ تاپ</span>
+                    <h3 class="card-title"></h3>
+                </header>
+                <div class="product-carousel owl-carousel owl-theme owl-rtl owl-loaded owl-drag">
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage"
+                            style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1534px;">
+                            <div class="owl-item active tab-item" style="width: 296.75px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="#" class="d-block hover-img-link" data-toggle="modal"
+                                        data-target="#exampleModal">
+                                        <img src="/static/images/slider-product/mitbook.jpg" class="img-fluid"
+                                            alt="">
+                                            <span class="icon-view">
+                                                <strong><i class="fa fa-eye"></i></strong>
+                                            </span>
+                                    </a>
+                                    <h2 class="post-title">
+                                        <a href="#">
+                                            هواوای میت بوک X پرو 13.9 اینچ
+                                        </a>
+                                    </h2>
+                                    <div class="price">
+                                        <del><span>۱۲,۰۰۰,۰۰۰<span>تومان</span></span></del>
+                                        <ins><span>۱۰,۵۰۰,۰۰۰<span>تومان</span></span></ins>
+                                    </div>
+                                    <div class="actions">
+                                        <ul>
+                                            <li class="action-item like">
+                                                <button class="btn btn-light add-product-wishes" type="submit">
+                                                    <i class="fa fa-heart-o"></i>
+                                                </button>
+                                            </li>
+                                            <li class="action-item compare">
+                                                <button class="btn btn-light btn-compare" type="submit">
+                                                    <i class="fa fa-random"></i>
+                                                </button>
+                                            </li>
+                                            <li class="action-item add-to-cart">
+                                                <button class="btn btn-light btn-add-to-cart" type="submit">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item active tab-item" style="width: 296.75px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="#" class="d-block hover-img-link" data-toggle="modal"
+                                        data-target="#exampleModal">
+                                        <img src="/static/images/slider-product/SL1200_-300x300.jpg"
+                                            class="img-fluid" alt="">
+                                            <span class="icon-view">
+                                                <strong><i class="fa fa-eye"></i></strong>
+                                            </span>
+                                    </a>
+                                    <h2 class="post-title">
+                                        <a href="#">
+                                            لپ تاپ چووی الترابوک 14 اینچ پرو
+                                        </a>
+                                    </h2>
+                                    <div class="price">
+                                        <del><span>۳,۲۰۰,۰۰۰<span>تومان</span></span></del>
+                                        <ins><span>۲,۵۰۰,۰۰۰<span>تومان</span></span></ins>
+                                    </div>
+                                    <div class="actions">
+                                        <ul>
+                                            <li class="action-item like">
+                                                <button class="btn btn-light add-product-wishes" type="submit">
+                                                    <i class="fa fa-heart-o"></i>
+                                                </button>
+                                            </li>
+                                            <li class="action-item compare">
+                                                <button class="btn btn-light btn-compare" type="submit">
+                                                    <i class="fa fa-random"></i>
+                                                </button>
+                                            </li>
+                                            <li class="action-item add-to-cart">
+                                                <button class="btn btn-light btn-add-to-cart" type="submit">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item active tab-item" style="width: 296.75px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="#" class="d-block hover-img-link" data-toggle="modal"
+                                        data-target="#exampleModal">
+                                        <img src="/static/images/slider-product/zenbook.jpg" class="img-fluid"
+                                            alt="">
+                                            <span class="icon-view">
+                                                <strong><i class="fa fa-eye"></i></strong>
+                                            </span>
+                                    </a>
+                                    <h2 class="post-title">
+                                        <a href="#">
+                                            لپ تاپ 13 اینچی ایسوس مدل ZenBook S13 UX392FN - A
+                                        </a>
+                                    </h2>
+                                    <div class="price">
+                                        <del><span>۷,۵۰۰,۰۰۰<span>تومان</span></span></del>
+                                        <ins><span>۶,۰۰۰,۰۰۰<span>تومان</span></span></ins>
+                                    </div>
+                                    <div class="actions">
+                                        <ul>
+                                            <li class="action-item like">
+                                                <button class="btn btn-light add-product-wishes" type="submit">
+                                                    <i class="fa fa-heart-o"></i>
+                                                </button>
+                                            </li>
+                                            <li class="action-item compare">
+                                                <button class="btn btn-light btn-compare" type="submit">
+                                                    <i class="fa fa-random"></i>
+                                                </button>
+                                            </li>
+                                            <li class="action-item add-to-cart">
+                                                <button class="btn btn-light btn-add-to-cart" type="submit">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item active tab-item" style="width: 296.75px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="#" class="d-block hover-img-link" data-toggle="modal"
+                                        data-target="#exampleModal">
+                                        <img src="/static/images/slider-product/computer-appel.jpg" class="img-fluid"
+                                            alt="">
+                                            <span class="icon-view">
+                                                <strong><i class="fa fa-eye"></i></strong>
+                                            </span>
+                                    </a>
+                                    <h2 class="post-title">
+                                        <a href="#">
+                                            کامپیوتر همه کاره 27 اینچی اپل مدل iMac CTO - A 2019 با صفحه نمایش رتینا
+                                            5K
+                                        </a>
+                                    </h2>
+                                    <div class="price">
+                                        <del><span>۳,۵۰۰,۰۰۰<span>تومان</span></span></del>
+                                        <ins><span>۲,۰۰۰,۰۰۰<span>تومان</span></span></ins>
+                                    </div>
+                                    <div class="actions">
+                                        <ul>
+                                            <li class="action-item like">
+                                                <button class="btn btn-light add-product-wishes" type="submit">
+                                                    <i class="fa fa-heart-o"></i>
+                                                </button>
+                                            </li>
+                                            <li class="action-item compare">
+                                                <button class="btn btn-light btn-compare" type="submit">
+                                                    <i class="fa fa-random"></i>
+                                                </button>
+                                            </li>
+                                            <li class="action-item add-to-cart">
+                                                <button class="btn btn-light btn-add-to-cart" type="submit">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item tab-item" style="width: 296.75px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="#" class="d-block hover-img-link" data-toggle="modal"
+                                        data-target="#exampleModal">
+                                        <img src="/static/images/slider-product/asus-laptop.jpg" class="img-fluid"
+                                            alt="">
+                                            <span class="icon-view">
+                                                <strong><i class="fa fa-eye"></i></strong>
+                                            </span>
+                                    </a>
+                                    <h2 class="post-title">
+                                        <a href="#">
+                                            لپ تاپ ایسوس زِنبوک 14
+                                        </a>
+                                    </h2>
+                                    <div class="price">
+                                        <del><span>۶,۵۰۰,۰۰۰<span>تومان</span></span></del>
+                                        <ins><span>۴,۲۰۰,۰۰۰<span>تومان</span></span></ins>
+                                    </div>
+                                    <div class="actions">
+                                        <ul>
+                                            <li class="action-item like">
+                                                <button class="btn btn-light add-product-wishes" type="submit">
+                                                    <i class="fa fa-heart-o"></i>
+                                                </button>
+                                            </li>
+                                            <li class="action-item compare">
+                                                <button class="btn btn-light btn-compare" type="submit">
+                                                    <i class="fa fa-random"></i>
+                                                </button>
+                                            </li>
+                                            <li class="action-item add-to-cart">
+                                                <button class="btn btn-light btn-add-to-cart" type="submit">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% comment %} <!-- Mobile Phone Ads---------------------------------> {% endcomment %}
+<aside class="main-row-bg d-block d-md-block">
+    <div class="bg-cover"></div>
+    <div class="container-main">
+        <div class="d-block">
+            <section class="content-title section-title mt-5">
+                <div class="align-items-center">
+                    <div class="col-auto">
+                        <div class="title">
+                            <h2>جدید ترین های لپ تاپ</h2>
+                        </div>
+                        <div class="subtitle">
+                            <span>آخرین محصولات</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="mb-3">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 pt-4 pr">
+                    <div class="card-product-horizontal">
+                        <div class="card-product-horizontal-img">
+                            <a href="#" class="d-block">
+                                <img src="/static/images/slider-product/asus-laptop.jpg">
+                            </a>
+                        </div>
+                        <div class="card-product-horizontal-content">
+                            <div class="card-product-horizontal-content-title">
+                                <a href="#">
+                                    <h3>لپ تاپ ایسوس زِنبوک 14</h3>
+                                </a>
+                            </div>
+                            <div class="card-product-horizontal-content-price">
+                                <span class="amount">۴,۲۰۰,۰۰۰
+                                    <span>تومان</span>
+                                </span>
+                            </div>
+                            <div class="card-product-horizontal-content-rate">
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 pt-4 pr">
+                    <div class="card-product-horizontal">
+                        <div class="card-product-horizontal-img">
+                            <a href="#" class="d-block">
+                                <img src="/static/images/slider-product/mitbook.jpg">
+                            </a>
+                        </div>
+                        <div class="card-product-horizontal-content">
+                            <div class="card-product-horizontal-content-title">
+                                <a href="#">
+                                    <h3>هواوای میت بوک X پرو 13.9 اینچ</h3>
+                                </a>
+                            </div>
+                            <div class="card-product-horizontal-content-price">
+                                <span class="amount">۴,۲۰۰,۰۰۰
+                                    <span>تومان</span>
+                                </span>
+                            </div>
+                            <div class="card-product-horizontal-content-rate">
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 pt-4 pr">
+                    <div class="card-product-horizontal">
+                        <div class="card-product-horizontal-img">
+                            <a href="#" class="d-block">
+                                <img src="/static/images/slider-product/SL1200_-300x300.jpg">
+                            </a>
+                        </div>
+                        <div class="card-product-horizontal-content">
+                            <div class="card-product-horizontal-content-title">
+                                <a href="#">
+                                    <h3>لپ تاپ چووی الترابوک 14 اینچ پرو</h3>
+                                </a>
+                            </div>
+                            <div class="card-product-horizontal-content-price">
+                                <span class="amount">۴,۲۰۰,۰۰۰
+                                    <span>تومان</span>
+                                </span>
+                            </div>
+                            <div class="card-product-horizontal-content-rate">
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 pt-4 pr">
+                    <div class="card-product-horizontal">
+                        <div class="card-product-horizontal-img">
+                            <a href="#" class="d-block">
+                                <img src="/static/images/slider-product/mitbook.jpg">
+                            </a>
+                        </div>
+                        <div class="card-product-horizontal-content">
+                            <div class="card-product-horizontal-content-title">
+                                <a href="#">
+                                    <h3>هواوای میت بوک X پرو 13.9 اینچ</h3>
+                                </a>
+                            </div>
+                            <div class="card-product-horizontal-content-price">
+                                <span class="amount">۴,۲۰۰,۰۰۰
+                                    <span>تومان</span>
+                                </span>
+                            </div>
+                            <div class="card-product-horizontal-content-rate">
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 pt-4 pr">
+                    <div class="card-product-horizontal">
+                        <div class="card-product-horizontal-img">
+                            <a href="#" class="d-block">
+                                <img src="/static/images/slider-product/SL1200_-300x300.jpg">
+                            </a>
+                        </div>
+                        <div class="card-product-horizontal-content">
+                            <div class="card-product-horizontal-content-title">
+                                <a href="#">
+                                    <h3>لپ تاپ چووی الترابوک 14 اینچ پرو</h3>
+                                </a>
+                            </div>
+                            <div class="card-product-horizontal-content-price">
+                                <span class="amount">۴,۲۰۰,۰۰۰
+                                    <span>تومان</span>
+                                </span>
+                            </div>
+                            <div class="card-product-horizontal-content-rate">
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 pt-4 pr">
+                    <div class="card-product-horizontal">
+                        <div class="card-product-horizontal-img">
+                            <a href="#" class="d-block">
+                                <img src="/static/images/slider-product/asus-laptop.jpg">
+                            </a>
+                        </div>
+                        <div class="card-product-horizontal-content">
+                            <div class="card-product-horizontal-content-title">
+                                <a href="#">
+                                    <h3>لپ تاپ ایسوس زِنبوک 14</h3>
+                                </a>
+                            </div>
+                            <div class="card-product-horizontal-content-price">
+                                <span class="amount">۴,۲۰۰,۰۰۰
+                                    <span>تومان</span>
+                                </span>
+                            </div>
+                            <div class="card-product-horizontal-content-rate">
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 pt-4 pr">
+                    <div class="card-product-horizontal">
+                        <div class="card-product-horizontal-img">
+                            <a href="#" class="d-block">
+                                <img src="/static/images/slider-product/asus-laptop.jpg">
+                            </a>
+                        </div>
+                        <div class="card-product-horizontal-content">
+                            <div class="card-product-horizontal-content-title">
+                                <a href="#">
+                                    <h3>لپ تاپ ایسوس زِنبوک 14</h3>
+                                </a>
+                            </div>
+                            <div class="card-product-horizontal-content-price">
+                                <span class="amount">۴,۲۰۰,۰۰۰
+                                    <span>تومان</span>
+                                </span>
+                            </div>
+                            <div class="card-product-horizontal-content-rate">
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 pt-4 pr">
+                    <div class="card-product-horizontal">
+                        <div class="card-product-horizontal-img">
+                            <a href="#" class="d-block">
+                                <img src="/static/images/slider-product/mitbook.jpg">
+                            </a>
+                        </div>
+                        <div class="card-product-horizontal-content">
+                            <div class="card-product-horizontal-content-title">
+                                <a href="#">
+                                    <h3>هواوای میت بوک X پرو 13.9 اینچ</h3>
+                                </a>
+                            </div>
+                            <div class="card-product-horizontal-content-price">
+                                <span class="amount">۴,۲۰۰,۰۰۰
+                                    <span>تومان</span>
+                                </span>
+                            </div>
+                            <div class="card-product-horizontal-content-rate">
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 pt-4 pr">
+                    <div class="card-product-horizontal">
+                        <div class="card-product-horizontal-img">
+                            <a href="#" class="d-block">
+                                <img src="/static/images/slider-product/SL1200_-300x300.jpg">
+                            </a>
+                        </div>
+                        <div class="card-product-horizontal-content">
+                            <div class="card-product-horizontal-content-title">
+                                <a href="#">
+                                    <h3>لپ تاپ چووی الترابوک 14 اینچ پرو</h3>
+                                </a>
+                            </div>
+                            <div class="card-product-horizontal-content-price">
+                                <span class="amount">۴,۲۰۰,۰۰۰
+                                    <span>تومان</span>
+                                </span>
+                            </div>
+                            <div class="card-product-horizontal-content-rate">
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+{% comment %} <section id="slider"><!--slider-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                    {% comment %} <ol class="carousel-indicators">
+                        <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#slider-carousel" data-slide-to="1"></li>
+                    </ol>{% endcomment %}  
+                    {% comment %} <div class="carousel-inner"> 
+                        {% for slider in sliders %}
+                            <div class="item {% if forloop.first %} active {% endif %}">
+                                <div class="col-sm-6">
+                                    <h2>{{ slider.title }}</h2>
+                                    <p>{{ slider.description }}</p>
+                                    <a href="{{ slider.url }}"
+                                        target="_blank"
+                                        class="btn btn-default get">{{ slider.url_title }}</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    {% thumbnail slider.image "300x300" quality=90 crop='center' as im %}
+                                        <img src="{{ im.url }}">
+                                    {% endthumbnail %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section><!--/slider-->
+
+<section>
+    <div class="container">
+        <div class="row">
+
+            <div class="recommended_items"><!--NewProduct_items-->
+                <h2 class="title text-center">جدیدترین محصولات</h2>
+
+                <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for group in latest_products %}
+                            <div class="item {% if forloop.first %} active {% endif %}">
+                                {% for product in group %}
+                                    {% include 'includes/product_item_partial.html' with product=product col_size=3 %}
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                    <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+            </div><!--/NewProduct_items-->
+
+            <div class="col-sm-12 padding-right">
+                <div class="features_items"><!--RetailSale_items-->
+                    <h2 class="title text-center">پربازدیدترین محصولات</h2>
+                    <div id="new-item-carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            {% for group in most_visit_products %}
+                                <div class="item {% if forloop.first %} active {% endif %}">
+                                    {% for product in group %}
+                                        {% include 'includes/product_item_partial.html' with product=product col_size=3 %}
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                        <a class="left recommended-item-control" href="#new-item-carousel" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="right recommended-item-control" href="#new-item-carousel" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div><!--RetailSale_items-->
+
+
+                
+                <div class="features_items"><!--WholeSale_items-->
+                    <h2 class="title text-center">پرفروش ترین محصولات</h2>
+                    <div id="major-item-carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            {% for group in most_bought_products %}
+                                <div class="item {% if forloop.first %} active {% endif %}">
+                                    {% for product in group %}
+                                        {% include 'includes/product_item_partial.html' with product=product col_size=3 %}
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <a class="left recommended-item-control" href="#major-item-carousel" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="right recommended-item-control" href="#major-item-carousel" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div><!--WholeSale_items-->
+
+                <div class="category-tab"><!--category-tab-->
+                    <div class="col-sm-12">
+                        <ul class="nav nav-tabs">
+                            {% for categories_product in categories_products %}
+                                <li class="{% if forloop.first %} active {% endif %}"><a
+                                        href="#Tab_{{ categories_product.id }}"
+                                        data-toggle="tab">{{ categories_product.title }}</a></li>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        {% for categories_product in categories_products %}
+                            <div class="tab-pane fade {% if forloop.first %}active in{% endif %}"
+                                    id="Tab_{{ categories_product.id }}">
+                                {% for product in categories_product.products %}
+                                    <div class="col-sm-3">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    {% thumbnail product.image "268x250" quality=90 crop='center' as im %}
+                                                        <img src="{{ im.url }}">
+                                                    {% endthumbnail %}
+                                                    <h2>{{ product.price | three_digits_currency }}</h2>
+                                                    <p>{{ product.title }}</p>
+                                                    <a href="{{ product.get_absolute_url }}"
+                                                        class="btn btn-default add-to-cart"><i
+                                                            class="fa fa-shopping-cart"></i>نمایش محصول</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                </div><!--/category-tab-->
+
+            </div>
+
+        </div>
+    </div>
+</section> {% endcomment %}

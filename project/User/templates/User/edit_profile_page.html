@@ -1,0 +1,101 @@
+{% extends "shared/layout.html" %}
+{% load render_partial %}
+{% load i18n %}
+
+
+{% block title %}
+    {%  trans 'Edit User Information' %}
+{% endblock %}
+
+{% block content %}
+<div class="container-main">
+    <div class="d-block">
+        <section class="profile-home">
+            <div class="col-lg">
+                <div class="post-item-profile order-1 d-block">
+                    <div class="col-lg-3 col-md-3 col-xs-12 pr">
+                        {% render_partial 'User.views.user_panel_menu_component' %}
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-xs-12 pl">
+                        <div class="profile-content">
+                            <div class="profile-stats">
+                                <div class="profile-address">
+                                    <div class="middle-container">
+                                        <form enctype="multipart/form-data" action="{% url 'edit_profile_page' %}" method="post" class="form-checkout">
+                                            {% csrf_token %}
+
+                                                <div class="form-checkout-row">
+                                                <label for="namefirst"> {% trans 'First Name :' %} <abbr class="required" title= " {% trans 'Necessary' %} " style="color:red;">*</abbr></label>
+                                                {{ form.first_name }}
+
+                                                <label for="namelast">{% trans 'Last Name :' %}<abbr class="required" title= " {% trans 'Necessary' %} " style="color:red;">*</abbr></label>
+                                                {{ form.last_name }}
+
+                                                <label for="email">{% trans 'Email :' %} <abbr class="required" title= " {% trans 'Necessary' %} " style="color:red;">*</abbr></label>
+                                                {{ form.email }}
+
+                                                <label for="avatar"> {% trans 'Profile Picture :' %}</label>
+                                                {{ form.avatar }}
+
+                                                <label for="address">{% trans 'State :' %}<abbr class="required" title= " {% trans 'Necessary' %} " style="color:red;">*</abbr></label>
+                                                {{ form.state }}
+                                                <label for="address"> {% trans 'county :' %}<abbr class="required" title= " {% trans 'Necessary' %} " style="color:red;">*</abbr></label>
+                                                {{ form.city }}
+                                                <label for="address">{% trans 'Address :' %} <abbr class="required" title= " {% trans 'Necessary' %} " style="color:red;">*</abbr></label>
+                                                {{ form.address }}
+
+                                                <label for="about_user">{% trans 'About The Person :'  %}</label>
+                                                {{ form.about_user }}
+
+                                                {% comment %} <label for="password">رمز عبور قبلی <abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
+                                                <input type="text" id="password" class="input-password-checkout form-control">
+
+                                                <label for="password">رمز عبور جدید <abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
+                                                <input type="text" id="password" class="input-password-checkout form-control">
+
+                                                <label for="password">تکرار رمز عبور جدید <abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
+                                                <input type="text" id="password" class="input-password-checkout form-control"> {% endcomment %}
+
+                                                <div class="AR-CR">
+                                                    <button class="btn-registrar">{% trans ' Registration of user changes' %}</button>
+                                                    <a href="{% url 'profile_page' %}" class="cancel-edit-address" data-dismiss="modal" aria-label="Close">{% trans 'Back' %}</a>
+                                                    <span class="space"></span>
+                                                    <a href="{% url 'change_password_page' %}" class="cancel-edit-address" aria-label="Close">{% trans 'Change Password' %}</a>
+                                                    <span class="space"></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+{% comment %} <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            {% if current_user.avatar %}
+                <a class="thumbnail">
+                    <img style="width: 100%" src="{{current_user.avatar.url}}" alt="">
+                </a>
+            {% endif %}
+        {% render_partial 'User.views.user_panel_menu_component' %}
+        </div>
+        <div class="col-md-8">
+            <form enctype="multipart/form-data" action="{% url 'edit_profile_page' %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-success">ثبت</button>
+            </form>
+        </div>
+    </div>
+</div> {% endcomment %}

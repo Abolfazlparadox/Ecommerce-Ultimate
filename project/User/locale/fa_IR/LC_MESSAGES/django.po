@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-28 07:26+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\User\forms.py:11
+msgid "State"
+msgstr "استان"
+
+#: .\User\forms.py:12
+msgid "county"
+msgstr "شهرستان"
+
+#: .\User\templates\User\change_password_page.html:6
+msgid " Change Password"
+msgstr "تغییر رمز عبور"
+
+#: .\User\templates\User\change_password_page.html:27
+msgid "Previous Password :"
+msgstr "رمز عبور قبلی :"
+
+#: .\User\templates\User\change_password_page.html:27
+#: .\User\templates\User\change_password_page.html:31
+#: .\User\templates\User\change_password_page.html:35
+#: .\User\templates\User\edit_profile_page.html:28
+#: .\User\templates\User\edit_profile_page.html:31
+#: .\User\templates\User\edit_profile_page.html:34
+#: .\User\templates\User\edit_profile_page.html:40
+#: .\User\templates\User\edit_profile_page.html:42
+#: .\User\templates\User\edit_profile_page.html:44
+msgid "Necessary"
+msgstr "ضروری"
+
+#: .\User\templates\User\change_password_page.html:31
+msgid "New Password :"
+msgstr "  رمز عبور جدید :"
+
+#: .\User\templates\User\change_password_page.html:35
+msgid "Repeat The New Password :"
+msgstr "تکرار رمز عبور جدید :"
+
+#: .\User\templates\User\change_password_page.html:39
+msgid "Record Changes"
+msgstr "ثبت تغییرات"
+
+#: .\User\templates\User\change_password_page.html:40
+#: .\User\templates\User\edit_profile_page.html:62
+msgid "Back"
+msgstr "برگشت"
+
+#: .\User\templates\User\components\user_panel_menu_component.html:32
+msgid "Join The Site From"
+msgstr "عضویت در سایت از "
+
+#: .\User\templates\User\components\user_panel_menu_component.html:33
+#: .\User\templates\User\profile_page.html:42
+msgid "Mobile Phone Number :"
+msgstr "شماره موبایل"
+
+#: .\User\templates\User\components\user_panel_menu_component.html:35
+msgid "Sign Out Of The Account"
+msgstr "خروج از حساب "
+
+#: .\User\templates\User\components\user_panel_menu_component.html:44
+msgid "Profile"
+msgstr " پروفایل"
+
+#: .\User\templates\User\components\user_panel_menu_component.html:50
+msgid "All Orders"
+msgstr "همه سفارش ها"
+
+#: .\User\templates\User\components\user_panel_menu_component.html:55
+msgid "Favorites List"
+msgstr " لیست علاقه مندی"
+
+#: .\User\templates\User\components\user_panel_menu_component.html:60
+msgid "Address"
+msgstr " آدرس ها"
+
+#: .\User\templates\User\components\user_panel_menu_component.html:65
+msgid "Comments"
+msgstr "نظرات"
+
+#: .\User\templates\User\components\user_panel_menu_component.html:70
+msgid "Account Information"
+msgstr " اطلاعات حساب"
+
+#: .\User\templates\User\edit_profile_page.html:7
+#: .\User\templates\User\profile_page.html:8
+msgid "Edit User Information"
+msgstr "ویرایش اطلاعات کاربری"
+
+#: .\User\templates\User\edit_profile_page.html:28
+msgid "First Name :"
+msgstr "نام :"
+
+#: .\User\templates\User\edit_profile_page.html:31
+msgid "Last Name :"
+msgstr "نام خانوادگی :"
+
+#: .\User\templates\User\edit_profile_page.html:34
+msgid "Email :"
+msgstr "ایمیل :"
+
+#: .\User\templates\User\edit_profile_page.html:37
+msgid "Profile Picture :"
+msgstr "عکس پروفایل :"
+
+#: .\User\templates\User\edit_profile_page.html:40
+msgid "State :"
+msgstr "استان :"
+
+#: .\User\templates\User\edit_profile_page.html:42
+msgid "county :"
+msgstr "شهرستان :"
+
+#: .\User\templates\User\edit_profile_page.html:44
+#: .\User\templates\User\profile_page.html:56
+msgid "Address :"
+msgstr "آدرس :"
+
+#: .\User\templates\User\edit_profile_page.html:47
+msgid "About The Person :"
+msgstr "درباره شخص :"
+
+#: .\User\templates\User\edit_profile_page.html:61
+msgid " Registration of user changes"
+msgstr "تغییرات ثبت نام"
+
+#: .\User\templates\User\edit_profile_page.html:64
+msgid "Change Password"
+msgstr "تغییر رمز عبور"
+
+#: .\User\templates\User\profile_page.html:28
+msgid "First Name and Last Name :"
+msgstr "نام و نام خانوادگی :"
+
+#: .\User\templates\User\profile_page.html:34
+msgid "E-mail :"
+msgstr "ایمیل :"
+
+#: .\User\templates\User\profile_page.html:48
+msgid "Date Of Last Entry:"
+msgstr "تاریخ آخرین ورود :"
+
+#: .\User\templates\User\profile_page.html:61
+msgid "National Code"
+msgstr "کد ملی"
+
+#: .\User\templates\User\profile_page.html:69
+msgid "Editing Information"
+msgstr "ویرایش اطلاعات کاربری"

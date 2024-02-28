@@ -1,0 +1,150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-13 12:13+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\contact\apps.py:8
+msgid "Contact us Module"
+msgstr "ماژول ارتباط با ما"
+
+#: .\contact\forms.py:58
+msgid "message"
+msgstr "پیغام"
+
+#: .\contact\forms.py:67
+msgid "Example: Mohammad Reza Ahmadi"
+msgstr "'مثال: محمد رضا احمدی' "
+
+#: .\contact\forms.py:72
+msgid "Example: test.123@gmail.com"
+msgstr "'مثال: test.123@gmail.com ' "
+
+#: .\contact\forms.py:79
+msgid "Example: 09123456789"
+msgstr "' مثال : 09123456789 '"
+
+#: .\contact\forms.py:84
+msgid "Example: Hello..."
+msgstr "'مثال: با عرض سلام .... ' "
+
+#: .\contact\forms.py:96
+msgid "Your First and Last name"
+msgstr "نام و نام خانوادگی"
+
+#: .\contact\forms.py:97
+msgid "Your Email"
+msgstr "ایمیل"
+
+#: .\contact\forms.py:98
+msgid "Mobile Number"
+msgstr "شماره همراه"
+
+#: .\contact\forms.py:103
+msgid "Full name is Required and please Enter"
+msgstr "نام کامل الزامی است و لطفا وارد کنید"
+
+#: .\contact\forms.py:106
+msgid "Email is Required. Please Enter"
+msgstr "ایمیل مورد الزامی است. لطفا وارد کنید"
+
+#: .\contact\forms.py:109
+msgid "Mobile Number is Required. Please Enter"
+msgstr "شماره موبایل الزامی است لطفا وارد کنید"
+
+#: .\contact\models.py:10
+msgid "Suggestions"
+msgstr "پیشنهادات"
+
+#: .\contact\models.py:11
+msgid "Criticisms"
+msgstr "انتقادات"
+
+#: .\contact\models.py:12
+msgid " Complaint "
+msgstr "شکایت"
+
+#: .\contact\models.py:13
+msgid "Order Tracking"
+msgstr "رهگیری سفارش"
+
+#: .\contact\models.py:14
+msgid " Other cases "
+msgstr "موارد دیگر"
+
+#: .\contact\models.py:16
+msgid "Subject"
+msgstr "موضوع"
+
+#: .\contact\models.py:17
+msgid " Title "
+msgstr "عنوان"
+
+#: .\contact\models.py:18
+msgid " First Name and Last Name "
+msgstr "نام و نام خانوادگی"
+
+#: .\contact\models.py:19
+msgid "Email"
+msgstr "ایمیل"
+
+#: .\contact\models.py:20
+msgid "Phone Number"
+msgstr "شماره همراه"
+
+#: .\contact\models.py:21
+msgid "Text to Contact us"
+msgstr "متن ارتباط با ما"
+
+#: .\contact\models.py:22
+msgid " Creation Date "
+msgstr "تاریخ ایجاد"
+
+#: .\contact\models.py:23
+msgid "Answer text"
+msgstr "جواب پیغام"
+
+#: .\contact\models.py:24
+msgid "Viewed by Admin"
+msgstr "مشاهده شده توسط ادمین"
+
+#: .\contact\models.py:26
+msgid " Contact us "
+msgstr "ارتباط با ما"
+
+#: .\contact\models.py:27
+msgid "Contacts us"
+msgstr "لیست ارتباط با ما"
+
+#: .\contact\templates\contact_module\contact_us.html:5
+#: .\contact\templates\contact_module\contact_us.html:17
+msgid " Contact us"
+msgstr "ارتباط با ما"
+
+#: .\contact\templates\contact_module\contact_us.html:20
+msgid ""
+" It is better to use the form below to follow up or ask about the order and "
+"send a message. "
+msgstr ""
+"برای پیگیری و یا استعلام سفارش و ارسال پیام بهتر است از فرم زیر استفاده "
+"نمایید."
+
+#: .\contact\templates\contact_module\contact_us.html:27
+msgid " Subject "
+msgstr "موضوع"
+
+#~ msgid "Contact us Text"
+#~ msgstr "پاسخ متن"

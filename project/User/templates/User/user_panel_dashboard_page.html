@@ -1,0 +1,10 @@
+{% extends 'shared/layout.html' %}
+{% load render_partial %}
+
+{% block title %}
+    داشبورد
+{% endblock %}
+
+{% block content %}
+    {% render_partial 'User.views.user_panel_menu_component' %}
+{% endblock %}

@@ -1,0 +1,239 @@
+{% load static %}
+
+
+
+{% comment %} <!-- footer-------------------------------------------> {% endcomment %}
+<footer class="footer-main-site">
+    <section class="d-block d-xl-block d-lg-block d-md-block d-sm-block order-1">
+        <div class="footer-shopping-features">
+            <div class="container-fluid">
+                <div class="col-12">
+                    <div class="item">
+                        <span class="icon-shopping">
+                            <img src="/static/images/footer/features/delivery-truck.svg" width="50"
+                                alt="تحویل اکسپرس" class="img-shopping">
+                        </span>
+                        <span class="title-shopping">تحویل اکسپرس</span>
+                        <span class="desc-shopping">در کمترین زمان دریافت کنید</span>
+                    </div>
+                    <div class="item">
+                        <span class="icon-shopping">
+                            <img src="/static/images/footer/features/24-hours-support.svg" width="50"
+                                alt="پشتیبانی ۲۴ ساعته" class="img-shopping">
+                        </span>
+                        <span class="title-shopping">پشتیبانی ۲۴ ساعته</span>
+                        <span class="desc-shopping">پشتیبانی هفت روز هفته</span>
+                    </div>
+                    <div class="item">
+                        <span class="icon-shopping">
+                            <img src="/static/images/footer/features/income.svg" width="50" alt="پرداخت در محل"
+                                class="img-shopping">
+                        </span>
+                        <span class="title-shopping">پرداخت در محل</span>
+                        <span class="desc-shopping">هنگام دریافت پرداخت کنید</span>
+                    </div>
+                    <div class="item">
+                        <span class="icon-shopping">
+                            <img src="/static/images/footer/features/easy-return.svg" width="50"
+                                alt="۷ روز ضمانت بازگشت" class="img-shopping">
+                        </span>
+                        <span class="title-shopping">۷ روز ضمانت بازگشت</span>
+                        <span class="desc-shopping">هفت روز مهلت دارید </span>
+                    </div>
+                    <div class="item">
+                        <span class="icon-shopping">
+                            <img src="/static/images/footer/features/original.svg" width="50"
+                                alt="ضمانت اصل‌بودن کالا" class="img-shopping">
+                        </span>
+                        <span class="title-shopping">ضمانت اصل‌بودن کالا</span>
+                        <span class="desc-shopping">تایید اصالت کالا</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="d-block d-xl-block d-lg-block d-md-block d-sm-block order-1">
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="footer-middlebar">
+                    <div class="col-lg-8 d-block pr">
+                        <div class="footer-links">
+                            {% for footer_link_box in footer_link_boxes.all %}
+                            <div class="col-lg-3 col-md-3 col-xs-12 pr">
+                                <div class="row">
+                                    <section class="footer-links-col">
+                                        <div class="headline-links">
+                                            <a href="#">
+                                                {{footer_link_box.title}}
+                                            </a>
+                                        </div>
+                                        <ul class="footer-menu-ul">
+                                            {% for link in footer_link_box.footerlink_set.all %}
+                                            <li class="menu-item-type-custom">
+                                                <a href="{link.url}}">
+                                                    {{link.title}}"
+                                                </a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-lg-4 d-block pl">
+                        <div class="shortcode-widget-area">
+                            <form action="#" class="form-newsletter">
+                                <fieldset>
+                                    <span class="form-newsletter-title"> با عضویت در خبرنامه از آخرین اخبار و
+                                        محصولات سایت مطلع شوید...</span>
+                                    <div class="input-group-newsletter">
+                                        <input type="email" class="input-field form-control"
+                                            placeholder="آدرس ایمیل خود را وارد کنید">
+                                        <button class="btn btn-info btn-secondary" type="submit">ارسال</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="footer-more-info">
+                        <div class="col-lg-10 pr">
+                            <div class="footer-content d-block">
+                                <div class="text pr-1">
+                                    <h2 class="title">  {{site_setting.site_name}} </h2>
+                                    <p class="desc">  {{site_setting.about_us_text}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 pl">
+                            <div class="footer-safety-partner">
+                                <div class="widget widget-product card mb-0">
+                                    <div
+                                        class="product-carousel-symbol owl-carousel owl-theme owl-rtl owl-loaded owl-drag">
+                                        <div class="owl-stage-outer">
+                                            <div class="owl-stage"
+                                                style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2234px;">
+                                                <div class="owl-item active"
+                                                    style="width: 300.75px; margin-left: 10px;">
+                                                    <div class="item">
+                                                        <a href="#" class="d-block hover-img-link">
+                                                            <img src="/static/images/footer/license/L-1.png"
+                                                                class="img-fluid img-brand" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="owl-item active"
+                                                    style="width: 300.75px; margin-left: 10px;">
+                                                    <div class="item">
+                                                        <a href="#" class="d-block hover-img-link mt-0">
+                                                            <img src="/static/images/footer/license/L-2.png"
+                                                                class="img-fluid img-brand" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-copyright">
+                            <div class="footer-copyright-text">
+                                <p>{{ site_setting.copy_right}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+
+{% comment %} <-- footer----------------------------------> {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+{% comment %} 
+<footer id="footer"><!--Footer-->
+    <div class="footer-Before">
+        <div class="container">
+            <div class="block-news">
+                <div class="row">
+                    <h3>با عضویت در خبـرنامه ما از تخفیفات ویـژه ما با خبـر شوید ... </h3>
+                    <div class="searchform newslatter">
+                        <input type="text" placeholder="آدرس ایمیـل شما ..."/>
+                        <button type="submit" class="btn btn-default">
+                            <i class="fa fa-arrow-circle-o-left"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="address">
+                        <img src="/static/images/home/map.png" alt=""/>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="address">
+                        <img src="/static/images/home/map.png" alt=""/>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="companyinfo">
+                        <h2>{{site_setting.site_name}}</h2>
+                        <h4>درباره ما :</h4>
+                        <p>
+                            {{site_setting.about_us_text}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-widget">
+        <div class="container">
+            <div class="row">
+                {% for footer_link_box in footer_link_boxes.all %}
+                <div class="col-sm-3 pull-right">
+                    <div class="single-widget">
+                        <h2>{{footer_link_box.title}}</h2>
+                        <ul class="nav nav-pills nav-stacked">
+                            {% for link in footer_link_box.footerlink_set.all %}
+                            <li><a href="{{link.url}}"> {{link.title}} </a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom" style="direction: ltr !important;">
+        <div class="container">
+            <div class="row">
+                <p class="pull-right"> 
+                    {{ site_setting.copy_right}}
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer><!--/Footer--> {% endcomment %}

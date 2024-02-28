@@ -1,0 +1,80 @@
+{% extends "shared/layout.html" %}
+{% load render_partial %}
+{% load i18n %}
+{% load poll_extras %}
+
+
+{% block title %}
+    {%  trans 'Edit User Information' %}
+{% endblock %}
+
+{% block content %}
+<div class="container-main">
+    <div class="d-block">
+        <section class="profile-home">
+            <div class="col-lg">
+                <div class="post-item-profile order-1 d-block">
+                    <div class="col-lg-3 col-md-3 col-xs-12 pr">
+                        {% render_partial 'User.views.user_panel_menu_component' %}
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-xs-12 pl">
+                        <div class="profile-content">
+                            <div class="profile-stats">
+                                <table class="table table-profile">
+                                    <tbody>
+                                        <tr>
+                                            <td class="w-50">
+                                                <div class="title">
+                                                        {%  trans 'First Name and Last Name :' %}
+                                                </div>
+                                                <div class="value"> {{current_user.first_name}} {{current_user.last_name}} </div>
+                                            </td>
+                                            <td>
+                                                <div class="title">
+                                                        {%  trans 'E-mail :' %}
+                                                </div>
+                                                <div class="value"> {{current_user.email}}  </div> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="title">
+                                                        {%  trans 'Mobile Phone Number :' %}
+                                                </div>
+                                                <div class="value">*******0991</div>
+                                            </td>
+                                            <td>
+                                                <div class="title">
+                                                        {%  trans 'Date Of Last Entry:' %}
+                                                </div>
+                                                <div class="value">{{current_user.last_login | show_jalali_date}}</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="title">
+                                                        {%  trans 'Address :' %}
+                                                </div>
+                                                <div class="value">{{current_user.address}}</div>
+                                            </td>
+                                            <td>
+                                                <div class="title"> {% trans 'National Code' %} </div>
+                                                <div class="value">-</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="profile-edit-action">
+                                    <a href={% url "edit_profile_page" %} class="link-spoiler-edit btn btn-secondary">
+                                            {%  trans 'Editing Information' %}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,194 @@
+.\Core\Scripts\activate
+cd .\project\
+py manage.py runserver
+
+
+
+
+python manage.py makemessages -l fa_IR --ignore venv
+python manage.py compilemessages --ignore venv 
+
+
+
+
+
+python manage.py makemigrations
+python manage.py migrate dashboard
+python manage.py makemigrations
+python manage.py migrate
+python manage.py generate_city
+py manage.py shell
+pip install pillow
+pip3 install mysqlclient
+pip install django_render_partial
+pip install sorl-thumbnail
+pip install -r requirements.txt
+
+pip install django-jalali-date==1.1.0
+pip install django-bootstrap-v5
+Python 3.12.1
+Name: Django
+Version: 4.2.6
+pillow 10.2.0
+django-render-partial 0.4
+pip --version
+>>
+pip 23.3.2
+pip freeze
+pip freeze > req.text
+python manage.py generate_city
+py -m venv name
+
+name\Scripts\activate.bat
+py -m pip install Django==--.--.--
+django-admin startproject name
+py manage.py runserver
+py manage.py startapp name
+py manage.py createsuperuser
+
+pip install django-ckeditor --upgrade
+
+C:\Users\ABC\AppData\Roaming\Microsoft\Windows\Start Menu\Programs
+مثال: What was the name of your first school?
+partanian
+https://iranhost.com/order/#/
+pass = N-75302532-n
+
+
+annotate : The annotate command will add any additional columns we want to our main table in each row
+
+
+
+
+site : 
+https://pypi.org/project/django-render-partial/
+https://virgool.io/@MahdiR/installing-mysql-in-django-f7emar3tia4w
+https://pypi.org/project/pillow/
+https://www.w3schools.com/django/django_install_django.php
+https://sorl-thumbnail.readthedocs.io/en/latest/installation.html
+
+
+in product_list in html tag a href we can this {% url 'Product_detail' product_id=product.id %}">{{ product.title }} / price : {{ product.price }}  
+or we can use function in django and use hem
+#We use the action method when we want the form to be displayed on the same page, and if we want the form to be displayed on other pages, there is no need to write an action.
+#We can write our requests in the views using requests and desired functions, but another feature is left for us called the base view class, which has two functions get and post are its variables that we can send our requests to
+for use image fild : python -m pip install Pillow Collecting Pillow
+
+
+cdn : content delivery Network = شبکه تحویل محتوا
+
+The views we used are either baseview functions or baseview classes
+
+
+email:
+To send an email to each member on the site, you must first create a Gmail and go to the two-step confirmation section, activate it, then go to the bottom of the page and select the app option, create the existing app.
+Google gives a 16-digit code that we must copy in the settings module in the EMAIL_HOST_PASSWORD field.
+
+When adding the data field to our model, we get the following model, which means that this field has not already had such a field.
+And we have that time now with the Date Time Code datetime.date.today() :
+
+It is impossible to add the field 'create_date' with 'auto_now_add=True' to article without providing a default. This is because the database needs something to populate existing rows.
+ 1) Provide a one-off default now which will be set on all existing rows
+ 2) Quit and manually define a default value in models.py.
+Select an option: 1
+Please enter the default value as valid Python.
+Accept the default 'timezone.now' by pressing 'Enter' or provide another value.
+The datetime and django.utils.timezone modules are available, so it is possible to provide e.g. timezone.now as a value.    
+Type 'exit' to exit this prompt
+[default: timezone.now] >>> datetime.date.today()
+Migrations for 'article':
+  article\migrations\0008_article_create_date_alter_article_author.py
+    - Add field create_date to article
+    - Alter field author on article
+
+
+
+
+
+
+
+
+A study of coding styles such as clean architecture, onion architecture, microservice architecture, which are widely used now, do some research and study.
+
+    ********** to do : go and complete to نظر خود را وارد کنید  in article app and make form for this item 
+    now im use ajax 
+
+
+#point1 : First, we fetched the user's carnet (instance=current_user) once and passed it to the edit form as an instance
+And edit the form with the context command on the screen, then in the post command again
+We took the information of the user's carnet to have the current user's information on the page again and passed it to our form again - we know that we want to edit it and our goal is not to register new data.
+
+#point2 : If we had a form in which we wanted to upload a file, we should 
+<form enctype="multipart/form-data" action="{% url 'edit_profile_page' %}" method="post">
+                    {% csrf_token %}
+
+
+#point3 : One of Django's capabilities, which is the annotate() command, is applied to the object, and its job is to load the desired data and additional items. I also bring you the annotate() command and the command
+The order of aggregate their pairs is for additional items, only the annotation is applied to each level, that is, if we have thousands of items, the entity tour is applied to those thousands.
+
+
+We use these commands to create lists of different pages :
+my_list = [1,2,3,4,5,6,7,8,9,10,11,12]
+        res_list = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+
+        group_list = []
+        group_size = 2
+        my_range = range(0,len(my_list),group_size)
+        print(list(my_range))
+        for i in my_range :
+            group_list.append(my_list[i:i+group_size])
+        print(group_list)
+
+
+
+
+
+
+
+
+
+
+--------------------------------------
+nest
+
+! pip install jsonfield --upgrade
+pip install django-currencies==0.10.1
+
+
+pip install django-countries
+pip install stripe
+
+pip install razorpay
+pip install django-user-agents
+pip install django-currencies
+
+pip install django-adminlte3
+pip install whitenoise
+pip install django-simple-captcha
+pip install beautifulsoup4
+
+
+
+# از
+from django.conf.urls import url
+
+# به جای آن از
+from django.urls import re_path
+-------------
+# از
+url(r'^my-url/$', my_view, name='my-url-name'),
+
+# به جای آن از
+re_path(r'^my-url/$', my_view, name='my-url-name'),
+
+
+https://virgool.io/@S.Kh/error-microsoft-visual-c-140-or-greater-is-required-get-it-with-microsoft-c-build-tools-eqvba6arcqky
+
+https://visualstudio.microsoft.com/visual-cpp-build-tools/
+
+from django.utils.translation import gettext_lazy as _
+
+
+
+
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy UnRestricted
