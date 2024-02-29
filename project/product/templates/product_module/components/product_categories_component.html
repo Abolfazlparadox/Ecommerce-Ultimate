@@ -1,4 +1,49 @@
-<h2>دسته بندی محصولات</h2>
+
+<section class="widget-product-categories">
+    <header class="cat-header">
+        <h2 class="mb-0">
+            <button class="btn btn-block text-right" data-toggle="collapse"
+                href="#headingOne" role="button" aria-expanded="false"
+                aria-controls="headingOne">
+                دسته بندی محصولات
+                <i class="mdi mdi-chevron-down"></i>
+            </button>
+        </h2>
+    </header>
+    <div class="product-filter">
+        <div class="card">
+            <div class="collapse show" id="headingOne">
+                <div class="card-main mb-0">
+                    {% for category in categories %}
+                    <div class="form-auth-row">
+                        <label for="#" class="ui-checkbox">
+                            <input type="checkbox" value="1" name="login" id="remember">
+                            <span class="ui-checkbox-check"></span>
+                        </label>
+                        <label for="remember" class="remember-me">{{category.title}}</label>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <h2>دسته بندی محصولات</h2>
 <div class="panel-group category-products" id="accordian"><!--category-productsr-->
     
     {% for category in categories %}
@@ -10,4 +55,4 @@
         </div>
     {% endfor %}
 </div><!--/category-productsr-->
-<a class="{% if request.resolver_match.url_name == 'product-list' %}active{% endif %}"
+<a class="{% if request.resolver_match.url_name == 'product-list' %}active{% endif %}"  {% endcomment %}

@@ -35,3 +35,16 @@
 .main-menu-link-category {
     padding: 10px 10px !important;
 }
+
+.zoom-img {
+    width: 400px !important;
+    position: absolute !important;
+}
+.amount-old{
+    color : red ;
+}
+.amount-new{
+    font-size: 18px;
+    font-weight: 500;
+    color: #606060;
+}

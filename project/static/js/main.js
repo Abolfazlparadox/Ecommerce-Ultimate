@@ -382,10 +382,10 @@ $(document).ready(function (e) {
             }
         })
 
-        Toast.fire({
-            icon: 'success',
-            title: 'به سبد خرید خود اضافه شد'
-        })
+        // Toast.fire({
+        //     icon: 'success',
+        //     title: 'به سبد خرید خود اضافه شد'
+        // })
     });
     // compare
     $('.btn-compare').on('click', function (event) {

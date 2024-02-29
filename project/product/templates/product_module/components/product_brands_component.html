@@ -1,4 +1,41 @@
-<div class="brands_products"><!--brands_products-->
+
+
+<section class="widget-product-categories">
+    <header class="cat-header">
+        <h2 class="mb-0">
+            <button class="btn btn-block text-right" data-toggle="collapse"
+                href="#headingTwo" role="button" aria-expanded="false"
+                aria-controls="headingTwo">
+                برند ها
+                <i class="mdi mdi-chevron-down"></i>
+            </button>
+        </h2>
+    </header>
+    <div class="product-filter">
+        <div class="card">
+            <div class="collapse show" id="headingTwo">
+                <div class="card-main mb-0">
+                    {% for brand in brands  %}
+                    <div class="form-auth-row">
+                        <label for="#" class="ui-checkbox">
+                            <input type="checkbox" value="1" name="login" id="remember">
+                            <span class="ui-checkbox-check"></span>
+                        </label>
+                        <label for="remember" class="remember-me">{{brand.title}}</label>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+{% comment %} <div class="brands_products"><!--brands_products-->
     <h2>برنـد ها</h2>
     <div class="brands-name">
         <ul class="nav nav-pills nav-stacked">
@@ -7,4 +44,4 @@
             {% endfor %}
         </ul>
     </div>
-</div><!--/brands_products-->
+</div><!--/brands_products--> {% endcomment %}

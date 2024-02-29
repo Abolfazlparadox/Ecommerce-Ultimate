@@ -4,227 +4,14 @@
 {% load poll_extras %}
 
 
+
 {% block title %}
     {{ product.title }}
 {% endblock %}
 
-{% block header_references %}
-    <link href="/static/lib/image-lightbox/css/lightbox.min.css" rel="stylesheet">
-{% endblock %}
 
-{% block footer_references %}
-    <script src="/static/lib/image-lightbox/js/lightbox.min.js"></script>
-    {% comment %} <script src="/static/lib/image-lightbox/js/lightbox-plus-jquery.min.js"></script> {% endcomment %}
-{% endblock %}
 
 {% block content %}
-<section>
-    <div class="container">
-        <div class="row">
-            {% comment %} {% if is_favorite %}
-                <div class="col-md-12">
-                    <p>
-                        محصول مورد علاقه
-                    </p>
-                </div>
-            {% endif %} {% endcomment %}
-            <div class="col-sm-9 padding-right">
-                <div class="product-details"><!--product-details-->
-                    <div class="col-sm-5">
-                        <div class="view-product">
-                            {% if product.image %}
-                                {% thumbnail product.image "350x500" quality=95 crop='center' as im %}
-                                    <img src="{{ im.url }}" id="main_image">
-                                {% endthumbnail %}
-                            {% else %}
-                                <img src="/static/images/product-details/1.jpg" id="main_image" alt="">
-                            {% endif %}
-                            <h3>
-                                <a id ="show_large_image_modal"href="{{product.image.url}}" data-lightbox="product-image"> بزرگ نمایی</a>
-                            </h3>
-                        </div>
-                        <div id="similar-product" class="carousel slide" data-ride="carousel">
-
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner">
-
-
-                                {% for group in product_galleries_group  %}
-                                    <div class="item {% if forloop.first %}active{% endif %}">
-                                        {% for gallery in group  %}
-                                            <a onclick="showLargeImage('{{ gallery.image.url }}')">
-                                                {% thumbnail gallery.image "80x80" quality=99 crop='center' as im %}
-                                                    <img src="{{ im.url }}">
-                                                {% endthumbnail %}
-                                            </a>
-                                        {% endfor %}
-                                    </div>
-                                {% endfor %}
-                            </div>
-
-
-                            <!-- Controls -->
-                            <a class="right item-control" href="#similar-product" data-slide="next">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                            <a class="left item-control" href="#similar-product" data-slide="prev">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="col-sm-7">
-                        <div class="product-information"><!--/product-information-->
-                            {% comment %} <img src="/static/images/product-details/new.png" class="newarrival" alt=""> {% endcomment %}
-                            <div>
-                                <h2>{{ product.title }}</h2>
-                                <p>شناسـه : {{ product.id }}</p>
-                            </div>
-                            <div>
-                                <span>
-                                    <span>قیمت : {{ product.price | three_digits_currency }} </span>
-                                </span>
-                                <span>
-                                    <label>تعداد :</label>
-                                    <input type="number" min="1" value="1"
-                                            class="search_box" id="product-count">
-                                    <button onclick="addProductToCart({{product.id}})" class="btn btn-fefault cart">
-                                        <i class="fa fa-shopping-cart"></i>
-                                        افزودن به سبـد خریـد
-                                    </button>
-                                    </form>
-                                </span>
-                            </div>
-                            <div>
-                                <p><b>موجـودی :</b> در انبـار موجود می باشد</p>
-                                {% if product.brand %}
-                                    <p><b>برنـد :</b> {{ product.brand.title }} </p>
-                                {% endif %}
-                            </div>
-                            <span class="socials-share share">
-                                <ul>
-                                    <a href="#">
-                                        <li>
-                                            <label>بلـه</label>
-                                            <img src="/static/images/product-details/Bale.png">
-                                        </li>
-                                    </a>
-                                    <a href="#">
-                                        <li>
-                                            <label>سـروش</label>
-                                            <img src="/static/images/product-details/Soroush.png">
-                                        </li>
-                                    </a>
-                                    <a href="#">
-                                        <li>
-                                            <label>اینستاگرام</label>
-                                            <img src="/static/images/product-details/Instagram.png">
-                                        </li>
-                                    </a>
-                                    <li><img src="/static/images/product-details/rating.png" alt=""></li>
-                                </ul>
-                            </span>
-
-                        </div><!--/product-information-->
-                    </div>
-                </div><!--/product-details-->
-
-                <div class="category-tab shop-details-tab"><!--category-tab-->
-                    <div class="col-sm-12">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#details" data-toggle="tab">جزئیات</a></li>
-                            <li ><a href="#reviews" data-toggle="tab">نظرات (5)</a></li>
-                        </ul>
-                    </div>
-                    <div class="tab-content">
-                        <div class="tab-pane fade  active in" id="details">
-                            <div class="col-md-12">
-                                {{product.description | safe}}
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade" id="reviews">
-                            <div class="col-sm-12">
-                                <ul>
-                                    <li><a href=""><i class="fa fa-user"></i>مشتـری 1</a></li>
-                                    <li><a href=""><i class="fa fa-clock-o"></i>12:41 ب . ظ</a></li>
-                                    <li><a href=""><i class="fa fa-calendar-o"></i>29 تیـر 1397</a></li>
-                                </ul>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده ازلورملورم
-                                    ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                    گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
-                                    برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
-                                    کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
-                                    جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه
-                                    ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
-                                <p><b>نظـر خود را بنویسیـد</b></p>
-
-                                <form action="#">
-                                    <span>
-                                        <input type="text" placeholder="نام و نام خانوادگـی">
-                                        <input type="email" placeholder="آدرس ایمیـل">
-                                    </span>
-                                    <textarea name=""></textarea>
-                                    <b>رتبـه : </b> <img src="/static/images/product-details/rating.png" alt="">
-                                    <button type="button" class="btn btn-default pull-left">
-                                        ارسـال
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-                </div><!--/category-tab-->
-
-                <div class="recommended_items"><!--recommended_items-->
-                    <h2 class="title text-center">محصولات مرتبط</h2>
-
-                    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            {% for group in related_products %}
-                                <div class="item {% if forloop.first %}active{% endif %}">
-                                    {% for product in group %}
-                                        {% include 'includes/product_item_partial.html' with product=product col_size=4 %}
-                                    {% endfor %}
-                                </div>
-                            {% endfor %}
-
-                        </div>
-                        {% if related_products|length > 1 %}
-                            <a class="left recommended-item-control" href="#recommended-item-carousel"
-                                data-slide="prev">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                            <a class="right recommended-item-control" href="#recommended-item-carousel"
-                                data-slide="next">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        {% endif %}
-                    </div>
-                </div><!--/recommended_items-->
-
-            </div>
-
-
-            <div class="col-sm-3">
-                <div class="left-sidebar">
-                    {% render_partial 'product.views.product_categories_component' %}
-                    {% render_partial 'product.views.product_brands_component' %}
-                    <div class="shipping text-center"><!--shipping-->
-                        {% for banner in banners  %}
-                            <a href="{{banner.url}}">
-                                {% thumbnail banner.image "158x192" quality=95 crop='center' as im %}
-                                    <img src="{{ im.url }}">
-                                {% endthumbnail %}
-                            </a>
-                        {% endfor %}
-                    </div><!--/shipping-->
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
     <div class="container-main">
         <div class="d-block">
             <div class="page-content page-row">
@@ -233,11 +20,10 @@
                         <i class="mdi mdi-home"></i>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item "><a href="{% url "home_page" %}">خانه</a></li>
+                                <li class="breadcrumb-item"><a href="{% url "home_page" %}">خانه</a></li>
                                 <li class="breadcrumb-item"><a href="#">کالای دیجیتال</a></li>
-                                <li class="breadcrumb-item"><a href="#">موبایل</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">گوشی موبایل سامسونگ مدل Galaxy
-                                    Note 10 SM-N970F/DS دو سیم‌کارت ظرفیت 256 گیگابایت</li>
+                                <li class="breadcrumb-item"><a href="#">موبایل </a></li>
+                                <li class="breadcrumb-item active" aria-current="page"> {{product.title}}  </li>
                             </ol>
                         </nav>
                     </div>
@@ -256,19 +42,25 @@
                                                         </a>
                                                     </li>
                                                     <li class="option-social">
-                                                        <a href="#" class="btn-option btn-option-social" data-toggle="modal" data-target="#option-social">
+                                                        <a href="#" class="btn-option btn-option-social"
+                                                            data-toggle="modal" data-target="#option-social">
                                                             <i class="mdi mdi-share"></i>
                                                             <span>اشتراک</span>
                                                         </a>
                                                         <!-- Modal-option-social -->
-                                                        <div class="modal fade" id="option-social" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                        <div class="modal fade" id="option-social" tabindex="-1"
+                                                            role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                            aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered"
+                                                                role="document">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
-                                                                        <h5 class="modal-title" id="exampleModalCenterTitle">اشتراک گذاری
+                                                                        <h5 class="modal-title"
+                                                                            id="exampleModalCenterTitle">اشتراک گذاری
                                                                         </h5>
-                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                            <span aria-hidden="true">×</span>
+                                                                        <button type="button" class="close"
+                                                                            data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
                                                                         </button>
                                                                     </div>
                                                                     <div class="modal-body">
@@ -279,28 +71,40 @@
                                                                             <h5 class="share-title">ارسال از طریق ایمیل
                                                                             </h5>
                                                                             <div class="input-group-sharing">
-                                                                                <input type="email" class="share-email-address form-control" id="share-email">
-                                                                                <button class="btn-send-email btn btn-primary" type="submit">ارسال ایمیل</button>
+                                                                                <input type="email"
+                                                                                    class="share-email-address form-control"
+                                                                                    id="share-email">
+                                                                                <button
+                                                                                    class="btn-send-email btn btn-primary"
+                                                                                    type="submit">ارسال ایمیل</button>
                                                                             </div>
                                                                         </form>
                                                                         <div class="share-options">
-                                                                            <div class="share-social-buttons text-center">
-                                                                                <a href="#" class="share-social share-social-twitter">
+                                                                            <div
+                                                                                class="share-social-buttons text-center">
+                                                                                <a href="#"
+                                                                                    class="share-social share-social-twitter">
                                                                                     <i class="mdi mdi-twitter"></i>
                                                                                 </a>
-                                                                                <a href="#" class="share-social share-social-facebook">
+                                                                                <a href="#"
+                                                                                    class="share-social share-social-facebook">
                                                                                     <i class="mdi mdi-facebook"></i>
                                                                                 </a>
-                                                                                <a href="#" class="share-social share-social-whatsapp">
+                                                                                <a href="#"
+                                                                                    class="share-social share-social-whatsapp">
                                                                                     <i class="mdi mdi-whatsapp"></i>
                                                                                 </a>
-                                                                                <a href="#" class="share-social share-social-email-outline">
-                                                                                    <i class="mdi mdi-email-outline"></i>
+                                                                                <a href="#"
+                                                                                    class="share-social share-social-email-outline">
+                                                                                    <i
+                                                                                        class="mdi mdi-email-outline"></i>
                                                                                 </a>
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-share-col">
-                                                                            <input class="ui-url-field" type="url" value="https://www.digikala.com/product/dkp-1672478" readonly="">
+                                                                            <input class="ui-url-field" type="url"
+                                                                                value="https://www.digikala.com/product/dkp-1672478"
+                                                                                readonly="">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -308,19 +112,25 @@
                                                         </div>
                                                     </li>
                                                     <li class="option-alarm">
-                                                        <a href="#" class="btn-option btn-option-alarm" data-toggle="modal" data-target="#btn-option-alarm">
+                                                        <a href="#" class="btn-option btn-option-alarm"
+                                                            data-toggle="modal" data-target="#btn-option-alarm">
                                                             <i class="mdi mdi-bell-outline"></i>
                                                             <span>اطلاع‌رسانی</span>
                                                         </a>
                                                         <!-- Modal-option-alarm -->
-                                                        <div class="modal fade" id="btn-option-alarm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                        <div class="modal fade" id="btn-option-alarm" tabindex="-1"
+                                                            role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                            aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered"
+                                                                role="document">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
-                                                                        <h5 class="modal-title" id="exampleModalCenterTitle">به من اطلاع بده
+                                                                        <h5 class="modal-title"
+                                                                            id="exampleModalCenterTitle">به من اطلاع بده
                                                                         </h5>
-                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                            <span aria-hidden="true">×</span>
+                                                                        <button type="button" class="close"
+                                                                            data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
                                                                         </button>
                                                                     </div>
                                                                     <div class="modal-body">
@@ -328,70 +138,98 @@
                                                                         </div>
                                                                         <div class="form-auth-row">
                                                                             <label for="#" class="ui-checkbox mt-1">
-                                                                                <input type="checkbox" value="1" name="login" id="remember">
+                                                                                <input type="checkbox" value="1"
+                                                                                    name="login" id="remember">
                                                                                 <span class="ui-checkbox-check"></span>
                                                                             </label>
-                                                                            <label for="remember" class="remember-me mr-0">ایمیل به
+                                                                            <label for="remember"
+                                                                                class="remember-me mr-0">ایمیل به
                                                                                 info@digismart.com</label>
                                                                         </div>
                                                                         <div class="form-auth-row">
                                                                             <label for="#" class="ui-checkbox mt-1">
-                                                                                <input type="checkbox" value="1" name="login" id="remember">
+                                                                                <input type="checkbox" value="1"
+                                                                                    name="login" id="remember">
                                                                                 <span class="ui-checkbox-check"></span>
                                                                             </label>
-                                                                            <label for="remember" class="remember-me mr-0">پیامک به
+                                                                            <label for="remember"
+                                                                                class="remember-me mr-0">پیامک به
                                                                                 *******0991</label>
                                                                         </div>
                                                                         <div class="form-auth-row">
                                                                             <label for="#" class="ui-checkbox mt-1">
-                                                                                <input type="checkbox" value="1" name="login" id="remember">
+                                                                                <input type="checkbox" value="1"
+                                                                                    name="login" id="remember">
                                                                                 <span class="ui-checkbox-check"></span>
                                                                             </label>
-                                                                            <label for="remember" class="remember-me mr-0">سیستم پیام شخصی
+                                                                            <label for="remember"
+                                                                                class="remember-me mr-0">سیستم پیام شخصی
                                                                                 دیجی اسمارت</label>
                                                                         </div>
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-primary ml-2">ثبت</button>
-                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">بازگشت</button>
+                                                                        <button type="button"
+                                                                            class="btn btn-primary ml-2">ثبت</button>
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-dismiss="modal">بازگشت</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </li>
                                                     <li class="Three-dimensional">
-                                                        <a href="#" class="btn-option btn-Three-dimensional" data-toggle="modal" data-target="#more-product">
+                                                        <a href="#" class="btn-option btn-Three-dimensional"
+                                                            data-toggle="modal" data-target="#more-product">
                                                             <i class="mdi mdi-more"></i>
                                                             <span>نمایش بیشتر</span>
                                                         </a>
-                                                        <div class="modal fade" id="more-product" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                            <div class="modal-dialog modal-dialog-centered more-product" role="document">
+                                                        <div class="modal fade" id="more-product" tabindex="-1"
+                                                            role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                            aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered more-product"
+                                                                role="document">
                                                                 <div class="modal-content">
                                                                     <div class="modal-body">
                                                                         <div id="custom-events">
-                                                                            <a href="/static/images/page-single-product/product-img/product-img-note10.jpg">
-                                                                                <img src="/static/images/page-single-product/product-img/product-img-note10.jpg">
+                                                                            <a
+                                                                                href="/static/images/page-single-product/product-img/product-img-note10.jpg">
+                                                                                <img
+                                                                                    src="/static/images/page-single-product/product-img/product-img-note10.jpg" />
                                                                             </a>
-                                                                            <a href="/static/images/page-single-product/product-img/product-img-note10-big-1.jpg">
-                                                                                <img src="/static/images/page-single-product/product-img/product-img-note10-big-1.jpg">
+                                                                            <a
+                                                                                href="/static/images/page-single-product/product-img/product-img-note10-big-1.jpg">
+                                                                                <img
+                                                                                    src="/static/images/page-single-product/product-img/product-img-note10-big-1.jpg" />
                                                                             </a>
-                                                                            <a href="/static/images/page-single-product/product-img/product-img-note10-big-2.jpg">
-                                                                                <img src="/static/images/page-single-product/product-img/product-img-note10-big-2.jpg">
+                                                                            <a
+                                                                                href="/static/images/page-single-product/product-img/product-img-note10-big-2.jpg">
+                                                                                <img
+                                                                                    src="/static/images/page-single-product/product-img/product-img-note10-big-2.jpg" />
                                                                             </a>
-                                                                            <a href="/static/images/page-single-product/product-img/product-img-note10-big-3.jpg">
-                                                                                <img src="/static/images/page-single-product/product-img/product-img-note10-big-3.jpg">
+                                                                            <a
+                                                                                href="/static/images/page-single-product/product-img/product-img-note10-big-3.jpg">
+                                                                                <img
+                                                                                    src="/static/images/page-single-product/product-img/product-img-note10-big-3.jpg" />
                                                                             </a>
-                                                                            <a href="/static/images/page-single-product/product-img/product-img-note10-big-4.jpg">
-                                                                                <img src="/static/images/page-single-product/product-img/product-img-note10-big-4.jpg">
+                                                                            <a
+                                                                                href="/static/images/page-single-product/product-img/product-img-note10-big-4.jpg">
+                                                                                <img
+                                                                                    src="/static/images/page-single-product/product-img/product-img-note10-big-4.jpg" />
                                                                             </a>
-                                                                            <a href="/static/images/page-single-product/product-img/product-img-note10-big-5.jpg">
-                                                                                <img src="/static/images/page-single-product/product-img/product-img-note10-big-5.jpg">
+                                                                            <a
+                                                                                href="/static/images/page-single-product/product-img/product-img-note10-big-5.jpg">
+                                                                                <img
+                                                                                    src="/static/images/page-single-product/product-img/product-img-note10-big-5.jpg" />
                                                                             </a>
-                                                                            <a href="/static/images/page-single-product/product-img/product-img-note10-big-6.jpg">
-                                                                                <img src="/static/images/page-single-product/product-img/product-img-note10-big-6.jpg">
+                                                                            <a
+                                                                                href="/static/images/page-single-product/product-img/product-img-note10-big-6.jpg">
+                                                                                <img
+                                                                                    src="/static/images/page-single-product/product-img/product-img-note10-big-6.jpg" />
                                                                             </a>
-                                                                            <a href="/static/images/page-single-product/product-img/product-img-note10-big-7.jpg">
-                                                                                <img src="/static/images/page-single-product/product-img/product-img-note10-big-7.jpg">
+                                                                            <a
+                                                                                href="/static/images/page-single-product/product-img/product-img-note10-big-7.jpg">
+                                                                                <img
+                                                                                    src="/static/images/page-single-product/product-img/product-img-note10-big-7.jpg" />
                                                                             </a>
                                                                         </div>
                                                                     </div>
@@ -400,16 +238,10 @@
                                                         </div>
                                                     </li>
                                                     <li class="Three-dimensional">
-                                                        <a href="product-comparison.html" class="btn-option btn-compare">
+                                                        <a href="product-comparison.html"
+                                                            class="btn-option btn-compare">
                                                             <i class="mdi mdi-compare"></i>
                                                             <span>مقایسه</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="Three-dimensional">
-                                                        <a id="show_large_image_modal" class="btn-option"  href="{{product.image.url}}"  >
-                                                            {% comment %}   data-lightbox="product-image" {% endcomment %}
-                                                            <i class="mdi mdi-compare"></i>
-                                                            <span>بزرگ نمایی </span>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -418,48 +250,59 @@
                                         <div class="gallery-item">
                                             <div class="gallery-img">
                                                 <a href="#">
-                                                    
-                                                    <div class="zoomWrapper" style="height: 411px; width: 411px;">
-                                                        {% if product.image %}
-                                                            {% thumbnail product.image "400x400" quality=99 crop='center' as im %}
-                                                                <img class="zoom-img" id="img-product-zoom" data-zoom-image="{{ im.url }}" src="{{ im.url }}" id="main_image" >
-                                                            {% endthumbnail %}
-                                                        {% else %}
-                                                            <img class="zoom-img" id="img-product-zoom" src="/static/images/page-single-product/product-img/product-img-note10.jpg" data-zoom-image="/static/images/page-single-product/product-img/product-img-note10.jpg" width="411" style="position: absolute;">
-                                                        {% endif %}
-                                                        
-                                                        {% comment %} <img class="zoom-img" id="img-product-zoom" src="/static/images/page-single-product/product-img/product-img-note10.jpg" data-zoom-image="/static/images/page-single-product/product-img/product-img-note10.jpg" width="411" style="position: absolute;"> {% endcomment %}
-                                                    </div>
-                                                    </a><div id="gallery_01f" style="width:420px;float:right;"><a href="#">
+                                                    {% comment %} {% if product.image %}
+                                                    {% thumbnail product.image "400x400" quality=99 crop='center' as im %}
+                                                        <img class="zoom-img" id="img-product-zoom" data-zoom-image="{{ im.url }}" src="{{ im.url }}" id="main_image" >
+                                                    {% endthumbnail %}
+                                                {% else %}
+                                                    <img class="zoom-img" id="img-product-zoom" src="/static/images/page-single-product/product-img/product-img-note10.jpg" data-zoom-image="/static/images/page-single-product/product-img/product-img-note10.jpg" width="411" style="position: absolute;">
+                                                {% endif %} {% endcomment %}
+                                                {% if product.image %}
+                                                {% thumbnail product.image "800x800" quality=99 crop='center' as im %}
+                                                    <img class="zoom-img" id="img-product-zoom"
+                                                        src="{{ im.url }}" id="main_image"
+                                                        data-zoom-image="{{ im.url }}"
+                                                        />
+                                                    {% endthumbnail %}
+                                                    {% else %}
+                                                    <img class="zoom-img" id="img-product-zoom" src="/static/images/page-single-product/product-img/product-img-note10.jpg" data-zoom-image="/static/images/page-single-product/product-img/product-img-note10.jpg" width="411" style="position: absolute;">
+                                                {% endif %}
+                                                    <div id="gallery_01f" style="width:420px;float:right;">
                                                 </a>
-                                                <ul class="gallery-items owl-carousel owl-theme owl-rtl owl-loaded owl-drag" >
-
                                                 {% for group in product_galleries_group  %}
-                                                <div class="owl-stage-outer">
-                                                    <div class="owl-stage" >
-                                                        {% for gallery in group  %}
-                                                        <div class="owl-item  {% if forloop.first %}active{% endif %}" >
-                                                            <li class="item">
-                                                                <a onclick="showLargeImage('{{ gallery.image.url }}')">
-                                                                    {% thumbnail gallery.image "80x80" quality=99 crop='center' as im %}
-                                                                    <img src="{{ im.url }}">
-                                                                {% endthumbnail %}
-                                                                </a>
-                                                            </li>
+                                                <ul class="gallery-items owl-carousel owl-theme" id="gallery-slider">
+                                                    {% for gallery in group  %}
+                                                    <li class="item">
+                                                        {% comment %} {% for group in product_galleries_group  %}
+                                                        <div class="owl-stage-outer">
+                                                            <div class="owl-stage" >
+                                                                {% for gallery in group  %}
+                                                                <div class="owl-item  {% if forloop.first %}active{% endif %}" >
+                                                                    <li class="item">
+                                                                        <a onclick="showLargeImage('{{ gallery.image.url }}')">
+                                                                            {% thumbnail gallery.image "80x80" quality=99 crop='center' as im %}
+                                                                            <img src="{{ im.url }}">
+                                                                        {% endthumbnail %}
+                                                                        </a>
+                                                                    </li>
+                                                                </div>
+                                                                {% endfor %}
+        
+                                                            </div>
                                                         </div>
-                                                        {% endfor %}
-
-                                                    </div>
-                                                </div>
+                                                        {% endfor %} {% endcomment %}
+                                                        {% thumbnail gallery.image "800x800" quality=99 crop='center' as im %}
+                                                        <a href="#" class="elevatezoom-gallery {% if forloop.first %}active{% endif %}" data-update=""
+                                                            data-image="{{ im.url }}"
+                                                            data-zoom-image="{{ im.url }}">
+                                                            <img src="{{ im.url }}" width="100">
+                                                        {% endthumbnail %}
+                                                            {% comment %} <img src="/static/images/page-single-product/product-img/product-img-note10-big-1.jpg"
+                                                                width="100" /></a> {% endcomment %}
+                                                    </li>
+                                                    {% endfor %}
+                                                </ul>
                                                 {% endfor %}
-
-                                        <div class="owl-nav">
-                                            <button type="button" role="presentation" class="owl-prev disabled"><i class="fa fa-angle-right"></i></button>
-                                            <button type="button" role="presentation" class="owl-next"><i class="fa fa-angle-left"></i></button>
-                                        </div>
-                                        <div class="owl-dots disabled">
-                                        </div>
-                                    </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -472,24 +315,29 @@
                                     <h1 class="product-title">
                                         {{ product.title }}
                                     </h1>
+                                    {% comment %} #to_do
                                     <div class="product-guaranteed text-success">
                                         12
                                         <span>فروش موفق</span>
                                     </div>
+                                    {% endcomment %}
                                 </div>
                                 <div class="product-attributes">
-                                    <div class="product-config">
-                                        <span class="product-title-en">
-                                            <div class="product-rate">
-                                                <i class="fa fa-star active"></i>
-                                                <i class="fa fa-star active"></i>
-                                                <i class="fa fa-star active"></i>
-                                                <i class="fa fa-star active"></i>
-                                                <i class="fa fa-star active"></i>
+                                        <div class="product-rate">
+                                            {% for rating in product.ratings.all %}
+                                            <div>
+                                                {% for star_icon in rating.get_star_icons %}
+                                                    {% if star_icon == '⭐' %}
+                                                        <i class="fa fa-star active"></i>
+                                                    {% elif star_icon == '☆' %}
+                                                        <i class="fa fa-star-o"></i>
+                                                    {% endif %}
+                                                {% endfor %}
                                             </div>
-                                        </span>
+                                        {% endfor %}
                                     </div>
                                 </div>
+                                <br>
                                 <div class="product-config-wrapper">
                                     <div class="product-directory">
                                         <ul>
@@ -515,8 +363,8 @@
                                             {% endif %}
                                             </li>
                                             <li>
-                                                <span>
                                                 {% if product.brand %}
+                                                <span>
                                                     برند:
                                                 </span>
                                                 <a href="#" class="product-link product-tag-title">{{ product.brand.title }}</a>
@@ -527,18 +375,18 @@
                                     <div class="col=lg-6 col-md-6 col-xs-12 pr">
                                         <div class="product-variants">
                                             {% if product.color %}
-                                            <span>رنگ بندی: </span>
-                                            <ul class="js-product-variants">
-                                                {% for color in product.color.all %}
-                                                    <li class="ui-variant">
-                                                        <label for="#" class="ui-variant-color">
-                                                            <span class="ui-variant-shape" style="background-color: {{ color.color }}"></span>
-                                                            <input type="radio" value="4" name="color" id="variant" class="js-variant-selector" checked="">
-                                                            <span class="ui-variant-check"></span>
-                                                        </label>
-                                                    </li>
+                                                <span>رنگ بندی: </span>
+                                                <ul class="js-product-variants">
+                                                    {% for color in product.color.all %}
+                                                        <li class="ui-variant">
+                                                            <label for="#" class="ui-variant-color">
+                                                                <span class="ui-variant-shape" name="" style="background-color: {{ color.color }}"></span>
+                                                                <input type="radio" name="color" value="{{ color.name }}" class="js-variant-selector1" {% if color.name == form.instance.color %}checked{% endif %}>
+                                                                <span class="ui-variant-check"></span>
+                                                            </label>
+                                                        </li>
                                                     {% endfor %}
-                                            </ul>
+                                                </ul>
                                             {% endif %}
                                         </div>
                                         <div class="product-params pt-3">
@@ -567,13 +415,16 @@
                                                 </li>
                                             </ul>
                                         </div>
+                                        {% comment %} #to_do
                                         <div class="product-price-survey-question">
                                             آیا قیمت مناسب‌تری سراغ دارید؟
                                             <div class="answers">
-                                                <a href="#" class="product-price-survery-answer price-yes btn btn-secondary">بلی</a>
-                                                <a href="#" class="product-price-survery-answer price-no btn btn-secondary">خیر</a>
+                                                <a href="#"
+                                                    class="product-price-survery-answer price-yes btn btn-secondary">بلی</a>
+                                                <a href="#"
+                                                    class="product-price-survery-answer price-no btn btn-secondary">خیر</a>
                                             </div>
-                                        </div>
+                                        </div> {% endcomment %}
                                     </div>
                                     <div class="col=lg-6 col-md-6 col-xs-12 pr">
                                         <div class="product-seller-info">
@@ -588,28 +439,31 @@
                                                     <a href="#" class="product-name">{{product.warranty}} ماهه</a>
                                                     {% endif %}
                                                 </div>
-
                                                 <div class="product-seller-row price">
                                                     {% if product.discount %}
                                                     <span class="title"> قیمت:</span>
                                                     <a href="#" class="product-name">
                                                         <span class="amount">
-                                                            <s>{{ product.price | three_digits_currency }}</s>                                                        
+                                                            <s>{{ product.price | three_digits_currency }}</s> 
                                                         </span>
                                                         <br>
                                                         <span class="amount-new">
                                                             <b>{{ product.discounted_price | three_digits_currency }}<b>                                                   
                                                         </span>
-                                                        {% else %}
-                                                        <span class="amount-new">{{ product.price | three_digits_currency }}</span>
+                                                    </a>
+                                                    {% else %}
+                                                    <span class="title"> قیمت:</span>
+                                                    <a href="#" class="product-name">
+                                                        <span class="amount-new">
+                                                            {{ product.price | three_digits_currency }}
+                                                        </span>
                                                     </a>
                                                     {% endif %}
-
                                                 </div>
                                                 <div class="product-seller-row guarantee">
                                                     <span class="title mt-3"> تعداد:</span>
                                                     <div class="quantity pl">
-                                                        <input type="number" min="1" max="100" step="1" value="1"><div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>
+                                                        <input type="number" min="1" max="100" step="1" value="1" id="product-count">
                                                         <div class="quantity-nav">
                                                             <div class="quantity-button quantity-up">+</div>
                                                             <div class="quantity-button quantity-down">-</div>
@@ -618,7 +472,7 @@
                                                 </div>
                                                 <div class="product-seller-row add-to-cart">
                                                     <a href="#" class="btn-add-to-cart btn btn-primary">
-                                                        <span class="btn-add-to-cart-txt">افزودن به سبد خرید</span>
+                                                        <span onclick="addProductToCart({{product.id}})" class="btn-add-to-cart-txt">افزودن به سبد خرید</span>
                                                     </a>
                                                 </div>
                                             </div>
@@ -676,25 +530,30 @@
                 <div class="tab-box">
                     <ul class="tab nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="Review-tab" data-toggle="tab" href="#Review" role="tab" aria-controls="Review" aria-selected="true">
+                            <a class="nav-link active" id="Review-tab" data-toggle="tab" href="#Review" role="tab"
+                                aria-controls="Review" aria-selected="true">
                                 <i class="mdi mdi-glasses"></i>
-                                بررسی اختصاصی
+                                نقد و بررسی
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="Specifications-tab" data-toggle="tab" href="#Specifications" role="tab" aria-controls="Specifications" aria-selected="false">
+                            <a class="nav-link" id="Specifications-tab" data-toggle="tab" href="#Specifications"
+                                role="tab" aria-controls="Specifications" aria-selected="false">
                                 <i class="mdi mdi-format-list-checks"></i>
                                 مشخصات
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="User-comments-tab" data-toggle="tab" href="#User-comments" role="tab" aria-controls="User-comments" aria-selected="false">
+                            <a class="nav-link" id="User-comments-tab" data-toggle="tab" href="#User-comments"
+                                role="tab" aria-controls="User-comments" aria-selected="false">
                                 <i class="mdi mdi-comment-text-multiple-outline"></i>
                                 نظرات کاربران
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="question-and-answer-tab" data-toggle="tab" href="#question-and-answer" role="tab" aria-controls="question-and-answer" aria-selected="false">
+                            <a class="nav-link" id="question-and-answer-tab" data-toggle="tab"
+                                href="#question-and-answer" role="tab" aria-controls="question-and-answer"
+                                aria-selected="false">
                                 <i class="mdi mdi-comment-question-outline"></i>
                                 پرسش و پاسخ
                             </a>
@@ -704,8 +563,9 @@
                 <div class="col-lg">
                     <div class="tabs-content">
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="Review" role="tabpanel" aria-labelledby="Review-tab">
-                                <h2 class="params-headline"> بررسی اختصاصی</h2>
+                            <div class="tab-pane fade show active" id="Review" role="tabpanel"
+                                aria-labelledby="Review-tab">
+                                <h2 class="params-headline">نقد و بررسی اجمالی</h2>
                                 <section class="content-expert-summary">
                                     <div class="mask pm-3">
                                         <div class="mask-text">
@@ -752,7 +612,7 @@
                                     </div>
                                 </section>
                             {% endif %}
-                                <div class="content-expert-articles">
+                                {% comment %} <div class="content-expert-articles">
                                     <section class="content-expert-article">
                                         <button class="content-expert-button">
                                             <span class="show-more"><i class="mdi mdi-plus"></i></span>
@@ -872,9 +732,10 @@
                                                 می‌آورد.</p>
                                         </div>
                                     </section>
-                                </div>
+                                </div> {% endcomment %}
                             </div>
-                            <div class="tab-pane fade" id="Specifications" role="tabpanel" aria-labelledby="Specifications-tab">
+                            <div class="tab-pane fade" id="Specifications" role="tabpanel"
+                                aria-labelledby="Specifications-tab">
                                 <article>
                                     <h2 class="params-headline">مشخصات فنی
                                         <span>{{product.title}}</span>
@@ -1045,7 +906,8 @@
                                     </section> {% endcomment %}
                                 </article>
                             </div>
-                            <div class="tab-pane fade" id="User-comments" role="tabpanel" aria-labelledby="User-comments-tab">
+                            <div class="tab-pane fade" id="User-comments" role="tabpanel"
+                                aria-labelledby="User-comments-tab">
                                 <div class="comments">
                                     <h2 class="params-headline">امتیاز کاربران به
                                         <span>Samsung Galaxy Note 10 Dual SIM 256GB Mobile Phone</span>
@@ -1121,7 +983,8 @@
                                                                 <div class="cell-date">
                                                                     در تاریخ ۱۸ فروردین ۱۳۹۹
                                                                 </div>
-                                                                <div class="message-light"><i class="fa fa-thumbs-o-up"></i>خرید این محصول را
+                                                                <div class="message-light"><i
+                                                                        class="fa fa-thumbs-o-up"></i>خرید این محصول را
                                                                     توصیه می‌کنم</div>
                                                             </div>
                                                         </section>
@@ -1173,10 +1036,12 @@
                                                                     <div class="footer">
                                                                         <div class="comments-likes">آیا این نظر برایتان
                                                                             مفید بود؟
-                                                                            <button class="btn-like js-comment-like" type="submit">بله
+                                                                            <button class="btn-like js-comment-like"
+                                                                                type="submit">بله
                                                                                 <span class="count">8</span>
                                                                             </button>
-                                                                            <button class="btn-like js-comment-dislike" type="submit">خیر
+                                                                            <button class="btn-like js-comment-dislike"
+                                                                                type="submit">خیر
                                                                                 <span class="count">4</span>
                                                                             </button>
                                                                         </div>
@@ -1193,7 +1058,8 @@
                                                                 <div class="cell-date">
                                                                     در تاریخ ۱۹ فروردین ۱۳۹۹
                                                                 </div>
-                                                                <div class="message-light"><i class="fa fa-thumbs-o-up"></i>خرید این محصول را
+                                                                <div class="message-light"><i
+                                                                        class="fa fa-thumbs-o-up"></i>خرید این محصول را
                                                                     توصیه می‌کنم</div>
                                                             </div>
                                                         </section>
@@ -1246,10 +1112,12 @@
                                                                     <div class="footer">
                                                                         <div class="comments-likes">آیا این نظر برایتان
                                                                             مفید بود؟
-                                                                            <button class="btn-like js-comment-like" type="submit">بله
+                                                                            <button class="btn-like js-comment-like"
+                                                                                type="submit">بله
                                                                                 <span class="count">8</span>
                                                                             </button>
-                                                                            <button class="btn-like js-comment-dislike" type="submit">خیر
+                                                                            <button class="btn-like js-comment-dislike"
+                                                                                type="submit">خیر
                                                                                 <span class="count">4</span>
                                                                             </button>
                                                                         </div>
@@ -1264,7 +1132,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="question-and-answer" role="tabpanel" aria-labelledby="question-and-answer-tab">
+                            <div class="tab-pane fade" id="question-and-answer" role="tabpanel"
+                                aria-labelledby="question-and-answer-tab">
                                 <div class="faq">
                                     <h2 class="params-headline">پرسش و پاسخ
                                         <span>پرسش خود را در مورد محصول مطرح نمایید</span>
@@ -1273,7 +1142,8 @@
                                         <div class="form-faq-row mt-4">
                                             <div class="form-faq-col">
                                                 <div class="ui-textarea">
-                                                    <textarea name="qa" title="متن سوال" class="ui-textarea-field"></textarea>
+                                                    <textarea name="qa" title="متن سوال"
+                                                        class="ui-textarea-field"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -1323,7 +1193,8 @@
                                                 <li class="is-question">
                                                     <div class="section">
                                                         <div class="faq-header">
-                                                            <span class="icon-faq"><i class="mdi mdi-storefront"></i></span>
+                                                            <span class="icon-faq"><i
+                                                                    class="mdi mdi-storefront"></i></span>
                                                             <p class="h5">
                                                                 پاسخ فروشنده :
                                                                 <span>حسن</span>
@@ -1371,7 +1242,8 @@
                                                 <li class="is-question">
                                                     <div class="section">
                                                         <div class="faq-header">
-                                                            <span class="icon-faq"><i class="mdi mdi-storefront"></i></span>
+                                                            <span class="icon-faq"><i
+                                                                    class="mdi mdi-storefront"></i></span>
                                                             <p class="h5">
                                                                 پاسخ فروشنده :
                                                                 <span>جواد</span>
@@ -1423,213 +1295,6 @@
             </div>
         </div>
     </div>
-</div>
-
-{% endblock %}
-<section>
-    <div class="container">
-        <div class="row">
-            {% comment %} {% if is_favorite %}
-                <div class="col-md-12">
-                    <p>
-                        محصول مورد علاقه
-                    </p>
-                </div>
-            {% endif %} {% endcomment %}
-            <div class="col-sm-9 padding-right">
-                <div class="product-details"><!--product-details-->
-                    <div class="col-sm-5">
-                        <div class="view-product">
-                            {% if product.image %}
-                                {% thumbnail product.image "350x500" quality=95 crop='center' as im %}
-                                    <img src="{{ im.url }}" id="main_image">
-                                {% endthumbnail %}
-                            {% else %}
-                                <img src="/static/images/product-details/1.jpg" id="main_image" alt="">
-                            {% endif %}
-                            <h3>
-                                <a id ="show_large_image_modal"href="{{product.image.url}}" data-lightbox="product-image"> بزرگ نمایی</a>
-                            </h3>
-                        </div>
-                        <div id="similar-product" class="carousel slide" data-ride="carousel">
-
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner">
-
-
-                                {% for group in product_galleries_group  %}
-                                    <div class="item {% if forloop.first %}active{% endif %}">
-                                        {% for gallery in group  %}
-                                            <a onclick="showLargeImage('{{ gallery.image.url }}')">
-                                                {% thumbnail gallery.image "80x80" quality=99 crop='center' as im %}
-                                                    <img src="{{ im.url }}">
-                                                {% endthumbnail %}
-                                            </a>
-                                        {% endfor %}
-                                    </div>
-                                {% endfor %}
-                            </div>
-
-
-                            <!-- Controls -->
-                            <a class="right item-control" href="#similar-product" data-slide="next">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                            <a class="left item-control" href="#similar-product" data-slide="prev">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="col-sm-7">
-                        <div class="product-information"><!--/product-information-->
-                            {% comment %} <img src="/static/images/product-details/new.png" class="newarrival" alt=""> {% endcomment %}
-                            <div>
-                                <h2>{{ product.title }}</h2>
-                                <p>شناسـه : {{ product.id }}</p>
-                            </div>
-                            <div>
-                                <span>
-                                    <span>قیمت : {{ product.price | three_digits_currency }} </span>
-                                </span>
-                                <span>
-                                    <label>تعداد :</label>
-                                    <input type="number" min="1" value="1"
-                                            class="search_box" id="product-count">
-                                    <button onclick="addProductToCart({{product.id}})" class="btn btn-fefault cart">
-                                        <i class="fa fa-shopping-cart"></i>
-                                        افزودن به سبـد خریـد
-                                    </button>
-                                    </form>
-                                </span>
-                            </div>
-                            <div>
-                                <p><b>موجـودی :</b> در انبـار موجود می باشد</p>
-                                {% if product.brand %}
-                                    <p><b>برنـد :</b> {{ product.brand.title }} </p>
-                                {% endif %}
-                            </div>
-                            <span class="socials-share share">
-                                <ul>
-                                    <a href="#">
-                                        <li>
-                                            <label>بلـه</label>
-                                            <img src="/static/images/product-details/Bale.png">
-                                        </li>
-                                    </a>
-                                    <a href="#">
-                                        <li>
-                                            <label>سـروش</label>
-                                            <img src="/static/images/product-details/Soroush.png">
-                                        </li>
-                                    </a>
-                                    <a href="#">
-                                        <li>
-                                            <label>اینستاگرام</label>
-                                            <img src="/static/images/product-details/Instagram.png">
-                                        </li>
-                                    </a>
-                                    <li><img src="/static/images/product-details/rating.png" alt=""></li>
-                                </ul>
-                            </span>
-
-                        </div><!--/product-information-->
-                    </div>
-                </div><!--/product-details-->
-
-                <div class="category-tab shop-details-tab"><!--category-tab-->
-                    <div class="col-sm-12">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#details" data-toggle="tab">جزئیات</a></li>
-                            <li ><a href="#reviews" data-toggle="tab">نظرات (5)</a></li>
-                        </ul>
-                    </div>
-                    <div class="tab-content">
-                        <div class="tab-pane fade  active in" id="details">
-                            <div class="col-md-12">
-                                {{product.description | safe}}
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade" id="reviews">
-                            <div class="col-sm-12">
-                                <ul>
-                                    <li><a href=""><i class="fa fa-user"></i>مشتـری 1</a></li>
-                                    <li><a href=""><i class="fa fa-clock-o"></i>12:41 ب . ظ</a></li>
-                                    <li><a href=""><i class="fa fa-calendar-o"></i>29 تیـر 1397</a></li>
-                                </ul>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده ازلورملورم
-                                    ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                    گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
-                                    برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
-                                    کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
-                                    جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه
-                                    ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
-                                <p><b>نظـر خود را بنویسیـد</b></p>
-
-                                <form action="#">
-                                    <span>
-                                        <input type="text" placeholder="نام و نام خانوادگـی">
-                                        <input type="email" placeholder="آدرس ایمیـل">
-                                    </span>
-                                    <textarea name=""></textarea>
-                                    <b>رتبـه : </b> <img src="/static/images/product-details/rating.png" alt="">
-                                    <button type="button" class="btn btn-default pull-left">
-                                        ارسـال
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-                </div><!--/category-tab-->
-
-                <div class="recommended_items"><!--recommended_items-->
-                    <h2 class="title text-center">محصولات مرتبط</h2>
-
-                    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            {% for group in related_products %}
-                                <div class="item {% if forloop.first %}active{% endif %}">
-                                    {% for product in group %}
-                                        {% include 'includes/product_item_partial.html' with product=product col_size=4 %}
-                                    {% endfor %}
-                                </div>
-                            {% endfor %}
-
-                        </div>
-                        {% if related_products|length > 1 %}
-                            <a class="left recommended-item-control" href="#recommended-item-carousel"
-                                data-slide="prev">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                            <a class="right recommended-item-control" href="#recommended-item-carousel"
-                                data-slide="next">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        {% endif %}
-                    </div>
-                </div><!--/recommended_items-->
-
-            </div>
-
-
-            <div class="col-sm-3">
-                <div class="left-sidebar">
-                    {% render_partial 'product.views.product_categories_component' %}
-                    {% render_partial 'product.views.product_brands_component' %}
-                    <div class="shipping text-center"><!--shipping-->
-                        {% for banner in banners  %}
-                            <a href="{{banner.url}}">
-                                {% thumbnail banner.image "158x192" quality=95 crop='center' as im %}
-                                    <img src="{{ im.url }}">
-                                {% endthumbnail %}
-                            </a>
-                        {% endfor %}
-                    </div><!--/shipping-->
-                </div>
-            </div>
-
-        </div>
     </div>
-</section>
+{% endblock %}
+

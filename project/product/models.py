@@ -199,7 +199,10 @@ class Rating(models.Model):
     class Meta:
         unique_together = ['user', 'product']
 
-
+    def get_star_icons(self):
+        stars = '⭐' * self.rating
+        remaining_stars = '☆' * (5 - self.rating)  # تعداد باقی‌مانده با خالی پر می‌شود
+        return stars + remaining_stars
 
 
 

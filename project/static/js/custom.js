@@ -113,6 +113,7 @@ function addProductToCart(productId) {
             } else if (result.dismiss === Swal.DismissReason.cancel) {
                 Swal.fire({
                     title: 'حذف لغو شد!',
+                    confirmButtonText: 'باشه',
                     icon: 'info'
                 });
             }

@@ -17,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     {% include 'shared/header_references.html' %}
+    {% block header_references %}{% endblock %} 
     
 </head>
 
@@ -43,7 +44,8 @@
 
 </body>
     {% include 'shared/footer_references.html' %}
-    
+    {% block footer_references %}{% endblock %}
+
 </html>
 
 

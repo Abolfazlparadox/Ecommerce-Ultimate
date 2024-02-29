@@ -19,7 +19,11 @@ from .models import Product, ProductCategory, product_brand, ProductVisit , Prod
 #When we use the list view, the context is known as the list object by default. We can use the command code of the context object to give it the name we want.
 #Pass a certain amount of something to our own page using the get query function and use a variable and receive the query.
 
-
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
+from .models import Product, Rating
+from .forms import RatingForm
 from django.shortcuts import render
 from django_filters.views import FilterView
 from .models import Product
@@ -65,7 +69,7 @@ class ProductListView(ListView):
     model = Product
     context_object_name = 'products'
     ordering = ['-price']
-    paginate_by = 3
+    paginate_by = 10
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(ProductListView, self).get_context_data()
@@ -171,4 +175,25 @@ def product_brands_component(request: HttpRequest):
     return render(request, 'product_module/components/product_brands_component.html', context)
 
 
+@login_required
+def rate_product(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
 
+    # بررسی اینکه کاربر قبلاً برای این محصول رای داده یا نه
+    existing_rating = Rating.objects.filter(user=request.user, product=product)
+    if existing_rating.exists():
+        # اگر رای داده است، می‌توانید بتوانید اقدامات مختلفی را انجام دهید، مثلاً به او یک پیام بدهید
+        return render(request, 'rating_already_given.html', {'product': product})
+
+    if request.method == 'POST':
+        form = RatingForm(request.POST)
+        if form.is_valid():
+            rating = form.save(commit=False)
+            rating.user = request.user
+            rating.product = product
+            rating.save()
+            return render(request, 'rating_success.html', {'product': product})
+    else:
+        form = RatingForm()
+
+    return render(request, 'rate_product.html', {'product': product, 'form': form})

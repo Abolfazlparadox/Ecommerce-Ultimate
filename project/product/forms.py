@@ -60,3 +60,12 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 #     class Meta:
 #         model = User
 #         fields = ['username', 'password', 'remember_me']
+
+
+from django import forms
+from .models import Rating
+
+class RatingForm(forms.ModelForm):
+    class Meta:
+        model = Rating
+        fields = ['rating', 'comment']
