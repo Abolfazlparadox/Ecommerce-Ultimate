@@ -10,7 +10,7 @@ py manage.py makemigrations
 py manage.py migrate
 py manage.py runserver
 =-=-=-=-=-
-
+.\Environments\Core\Scripts\activate
 
 
 
