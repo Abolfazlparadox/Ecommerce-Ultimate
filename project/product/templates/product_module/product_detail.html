@@ -376,12 +376,13 @@
                                         <div class="product-variants">
                                             {% if product.color %}
                                                 <span>رنگ بندی: </span>
+                                                <input type="hidden" value="" id="variant"></input>
                                                 <ul class="js-product-variants">
                                                     {% for color in product.color.all %}
                                                         <li class="ui-variant">
                                                             <label for="#" class="ui-variant-color">
                                                                 <span class="ui-variant-shape" name="" style="background-color: {{ color.color }}"></span>
-                                                                <input type="radio" name="color" value="{{ color.name }}" class="js-variant-selector1" {% if color.name == form.instance.color %}checked{% endif %}>
+                                                                <input onclick="ChangeColor(this)" type="radio"  name="color"   value="{{ color.name }}">
                                                                 <span class="ui-variant-check"></span>
                                                             </label>
                                                         </li>

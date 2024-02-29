@@ -51,7 +51,9 @@ function showLargeImage(imageSrc) {
 
 function addProductToCart(productId) {
     const productCount = $('#product-count').val();
-    $.get('/cart/add-to-cart?product_id=' + productId + '&count=' + productCount).then(res => {
+    const productColor = $('#variant').val();
+    console.log(productColor);
+    $.get('/cart/add-to-cart?product_id=' + productId + '&count=' + productCount + '&color=' + productColor).then(res => {
         Swal.fire({
             title: 'اعلان',
             text: res.text,
@@ -64,6 +66,14 @@ function addProductToCart(productId) {
                 window.location.href = '/login';
             }
         })
+    });
+}
+
+function ChangeColor(radioButton) {
+    var color = radioButton.value;
+    document.getElementById('variant').value = color;
+    console.log(document.getElementById('variant').value);
+}
                 /*if (res.status === 'success') {
             Swal.fire({
                 title: 'اعلان',
@@ -83,9 +93,6 @@ function addProductToCart(productId) {
                 confirmButtonText: 'باشه ممنون'
             });
         }*/
-    });
-}
-
     // $.get(`/user/remove-cart-detail?detail_id=${detailId}&confirm=${confirmValue}`).then(res => {
 
     function removeCartDetail(detailId) {

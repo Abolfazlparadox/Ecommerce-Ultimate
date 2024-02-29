@@ -67,13 +67,11 @@ class ProductColor(models.Model):
         verbose_name = _('Color')
         verbose_name_plural = _('Colors')
     def save(self, *args, **kwargs):
-        # انتخاب نام رنگ بر اساس مقدار انتخاب شده
         for color_code, color_name in self.COLOR_PALETTE:
             if self.color == color_code:
                 self.name = color_name
-
-
-        super().save(*args, **kwargs)
+                self.name_en = color_name  # یا مقدار دلخواه برای name_en را انتخاب کنید
+            super().save(*args, **kwargs)
     def __str__(self):
         return str(self.name)
     

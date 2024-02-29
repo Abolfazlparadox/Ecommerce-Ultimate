@@ -1,5 +1,5 @@
 from modeltranslation.translator import TranslationOptions , register
-from .models import Product , ProductCategory , product_brand , ProductPoint
+from .models import Product , ProductCategory , product_brand , ProductPoint , ProductColor
 @register(Product)
 class product_translation (TranslationOptions):
     fields = ['title' , 'short_description' , 'description' , 'slug']
@@ -12,3 +12,6 @@ class product_translation (TranslationOptions):
 @register(ProductPoint)
 class product_translation (TranslationOptions):
     fields = ['strong_point' , 'weak_point']
+# @register(ProductColor)
+# class product_translation (TranslationOptions):
+#     fields = ['name']

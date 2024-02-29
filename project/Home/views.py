@@ -4,7 +4,7 @@ from django.views.generic.base import TemplateView
 from pages.models import SiteBanner
 from pages.models import SiteSetting , FooterLinkBox , Slider
 from utils.convertors import group_list
-from product.models import Product , ProductCategory,ProductGallery
+from product.models import Product , ProductCategory
 from utils.convertors import group_list
 from django.db.models import Sum
 from Cart.models import Cart , CartDetail
@@ -69,18 +69,10 @@ class HomeView(TemplateView):
         context['sliders'] = sliders
         latest_product = Product.objects.filter(is_active=True,is_delete=False).order_by('-id')[:12]
         most_visit_products = Product.objects.filter(is_active=True, is_delete=False).annotate(visit_count=Count('productvisit')).order_by('-visit_count')[:12]
-        product_filter1 = Product.objects.filter(is_active=True,is_delete=False,category__title="لوازم خانگی")[:5]
-        context ['product_filter1'] = product_filter1
-        product_filter2 = Product.objects.filter(is_active=True,is_delete=False,category__title="موبایل")[:5]
-        context ['product_filter2'] = product_filter2
-        product_filter3 = Product.objects.filter(is_active=True,is_delete=False,category__title="کامپیوتر و لپ تاپ")[:5]
-        context ['product_filter3'] = product_filter3
+
         context ['latest_products'] = group_list(latest_product)
         context['most_visit_products'] = group_list(most_visit_products)
-        product_all = Product.objects.filter(is_active=True,is_delete=False)
-        context ['product_all'] = product_all
-        Product_Gallery = ProductGallery.objects.all()
-        context ['Product_Gallery'] = Product_Gallery
+
         categories = list(ProductCategory.objects.annotate(products_count=Count('product_categories')).filter(is_active=True, is_delete=False, products_count__gt=0)[:6])
         categories_products = []
         for category in categories:

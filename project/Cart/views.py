@@ -24,6 +24,8 @@ CallbackURL = 'http://localhost:8000/cart/verify-payment/'
 def add_product_to_cart(request: HttpRequest):
     product_id = int(request.GET.get('product_id'))
     count = int(request.GET.get('count'))
+    color_str = request.GET.get('color')
+    print(color_str)
     if count < 1 :
         # count = 1
         return JsonResponse({
@@ -36,7 +38,8 @@ def add_product_to_cart(request: HttpRequest):
 
 
     if request.user.is_authenticated:
-        product = Product.objects.filter(id=product_id, is_active=True, is_delete=False).first()
+        product = Product.objects.filter(id=product_id, color__name=color_str , is_active=True, is_delete=False).first()
+        print(product)
         if product is not None:
             current_cart, created = Cart.objects.get_or_create(is_paid=False, user_id=request.user.id)
             current_cart_detail = current_cart.cartdetail_set.filter(product_id=product_id).first()
