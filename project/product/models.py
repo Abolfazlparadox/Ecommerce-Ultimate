@@ -70,7 +70,11 @@ class ProductColor(models.Model):
         for color_code, color_name in self.COLOR_PALETTE:
             if self.color == color_code:
                 self.name = color_name
-                self.name_en = color_name  # یا مقدار دلخواه برای name_en را انتخاب کنید
+                self.name = color_name  
+        for color_code, color_name_en in self.COLOR_PALETTE:
+            if self.color == color_code:
+                self.name_en = color_name_en
+                self.name_en = color_name_en  
             super().save(*args, **kwargs)
     def __str__(self):
         return str(self.name)

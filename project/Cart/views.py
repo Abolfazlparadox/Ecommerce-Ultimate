@@ -47,7 +47,7 @@ def add_product_to_cart(request: HttpRequest):
                 current_cart_detail.count += (count)
                 current_cart_detail.save()
             else:
-                new_detail = CartDetail(cart=current_cart, product_id=product_id, count=count)
+                new_detail = CartDetail(cart=current_cart, product_id=product_id, product__color__name=color_str , count=count)
                 new_detail.save()
 
 

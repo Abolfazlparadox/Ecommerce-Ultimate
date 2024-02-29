@@ -12,6 +12,6 @@ class product_translation (TranslationOptions):
 @register(ProductPoint)
 class product_translation (TranslationOptions):
     fields = ['strong_point' , 'weak_point']
-# @register(ProductColor)
-# class product_translation (TranslationOptions):
-#     fields = ['name']
+@register(ProductColor)
+class product_translation (TranslationOptions):
+    fields = ['name']
