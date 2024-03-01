@@ -1,10 +1,11 @@
 from django.db import models
 from account.models import User
-from product.models import Product
+from product.models import Product , ProductColor
 # Create your models here.
 
 class Cart(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='کاربر')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='محصول', null=True, blank=True)
     is_paid = models.BooleanField(null=True, blank=True,verbose_name='نهایی شده / نشده')
     payment_date = models.DateField(null=True, blank=True, verbose_name='تاریخ پرداخت')
 
@@ -32,6 +33,7 @@ class Cart(models.Model):
 class CartDetail(models.Model):
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE, verbose_name='سبد خرید')
     product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='محصول')
+    color = models.ForeignKey(ProductColor, on_delete=models.CASCADE , null=True, blank=True)
     final_price = models.IntegerField(null=True, blank=True, verbose_name='قیمت نهایی تکی محصول')
     count = models.IntegerField(verbose_name='تعداد')
 

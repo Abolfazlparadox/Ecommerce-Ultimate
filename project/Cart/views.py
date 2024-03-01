@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse, JsonResponse
-from product.models import Product
+from product.models import Product , ProductColor
 from .models import Cart , CartDetail
 import json
 import requests
@@ -38,17 +38,19 @@ def add_product_to_cart(request: HttpRequest):
 
 
     if request.user.is_authenticated:
-        product = Product.objects.filter(id=product_id, color__name=color_str , is_active=True, is_delete=False).first()
+        product_color = ProductColor.objects.get(name=color_str)
+        product = Product.objects.filter(id=product_id, color=product_color , is_active=True, is_delete=False).first()
         print(product)
         if product is not None:
             current_cart, created = Cart.objects.get_or_create(is_paid=False, user_id=request.user.id)
-            current_cart_detail = current_cart.cartdetail_set.filter(product_id=product_id).first()
+            current_cart_detail = current_cart.cartdetail_set.filter(product_id=product_id , color=product_color).first()
             if current_cart_detail is not None:
                 current_cart_detail.count += (count)
                 current_cart_detail.save()
             else:
-                new_detail = CartDetail(cart=current_cart, product_id=product_id, product__color__name=color_str , count=count)
+                new_detail = CartDetail(cart=current_cart, product_id=product_id, color=product_color , count=count)
                 new_detail.save()
+
 
 
             return JsonResponse({
