@@ -110,18 +110,27 @@ WSGI_APPLICATION = 'project.wsgi.application'
 AUTH_USER_MODEL = 'account.User'
 # LOGIN_URL = '/login'
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'holding',
+#         'USER': 'root',
+#         'PASSWORD': 'N75302532n',
+#         'HOST':'localhost',
+#         'PORT':'3306',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'holding',
+        'NAME': 'nima-project',
         'USER': 'root',
-        'PASSWORD': 'N75302532n',
+        'PASSWORD': 'paradox7788',
         'HOST':'localhost',
         'PORT':'3306',
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
