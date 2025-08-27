@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # "admin_interface",
     "colorfield",
-    'admin_persian',
+    # 'admin_persian',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,7 +124,7 @@ AUTH_USER_MODEL = 'account.User'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'nima-project',
+        'NAME': 'Eccomerce-Ultimate',
         'USER': 'root',
         'PASSWORD': 'paradox7788',
         'HOST':'localhost',

@@ -1,7 +1,6 @@
 from typing import Any
 from django.db.models.query import QuerySet
 from django.shortcuts import render
-# Create your views here.
 from django.views import View
 from django.views.generic.list import ListView 
 from django.views.generic import DetailView
