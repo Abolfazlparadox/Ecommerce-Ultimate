@@ -2,9 +2,10 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
+from typing import Any, Dict
 
 
-def send_email(subject, to, context, template_name):
+def send_email(subject: str, to: str, context: Dict[str, Any], template_name: str) -> None:
     try:
         html_message = render_to_string(template_name, context)
         plain_message = strip_tags(html_message)

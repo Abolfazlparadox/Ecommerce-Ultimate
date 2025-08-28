@@ -78,7 +78,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'project.urls'
 
-TEMPLATES = [
+from typing import List, Dict, Any
+
+TEMPLATES: List[Dict[str, Any]] = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates/')],
@@ -153,7 +155,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'fa'
+LANGUAGE_CODE = "fa-ir"
 
 LANGUAGES = [
     ('fa', 'فارسی'),
@@ -214,17 +216,16 @@ CKEDITOR_CONFIGS = {
 CKEDITOR_CONFIGS = {
     'default': {
         'lang': 'fa',  # یا 'en' برای زبان انگلیسی
-        'disabled' :'<p>' ,
+        'disabled': False,  # یا True اگر می‌خواهید غیرفعال باشد
         'toolbar': 'Custom',
         'toolbar_Custom': [
             ['Bold', 'Italic', 'Underline'],
             ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
-                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
             ['Link', 'Unlink'],
             ['RemoveFormat', 'Source'],
             ['Form', 'Checkbox', 'Radio', 'TextField', 'Image',
-                'Textarea', 'Select', 'Button', 'HiddenField']
-
+            'Textarea', 'Select', 'Button', 'HiddenField']
         ]
     }
 }
@@ -248,17 +249,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 30
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'login'
-
-
-SESSION_COOKIE_AGE = 5000
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'servers.requestemail@gmail.com'
-EMAIL_HOST_PASSWORD = 'fnjaiblqqotoxyqy'
-EMAIL_PORT = 587
-
 
 # default settings (optional)
 JALALI_DATE_DEFAULTS = {
@@ -286,3 +276,15 @@ JALALI_DATE_DEFAULTS = {
         }
     },
 }
+
+
+SESSION_COOKIE_AGE = 5000
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'servers.requestemail@gmail.com'
+EMAIL_HOST_PASSWORD = 'fnjaiblqqotoxyqy'
+EMAIL_PORT = 587
+
+

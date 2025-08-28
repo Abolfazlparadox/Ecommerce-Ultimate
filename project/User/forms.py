@@ -2,7 +2,7 @@ from django import forms
 from account.models import User
 from django.core import validators
 from django.core.exceptions import ValidationError
-from iranian_cities.models import Ostan ,Shahrestan ,Shahr
+from iranian_cities.models import Province as Ostan, City as Shahrestan
 from django.utils.translation import gettext_lazy as _
 
 
