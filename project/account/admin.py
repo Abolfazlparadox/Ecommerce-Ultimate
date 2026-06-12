@@ -1,8 +1,12 @@
 # accounts/admin.py
 from django.contrib import admin
-from .models import User, Address
+from .models import  Address
 from django.utils.translation import gettext_lazy as _
 from django.contrib.admin import ModelAdmin
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
 @admin.register(User)
 class UserAdmin(ModelAdmin[User]):
     list_display = ("id", "username", "mobile", "national_code", "account_type", "is_admitted", "jalali_date_joined")

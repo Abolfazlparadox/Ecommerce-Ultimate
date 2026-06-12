@@ -1,17 +1,17 @@
 from __future__ import annotations
-
 from typing import Optional, TYPE_CHECKING
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import RegexValidator
 from jalali_date import date2jalali, datetime2jalali  # type: ignore
+from django.contrib.auth import get_user_model
 
 from .validators import validate_iran_mobile, validate_iran_national_code
 
 if TYPE_CHECKING:
     # For type checkers (django-stubs resolves this properly)
-    from account.models import User
+    User = get_user_model()
 
 
 # -----------------------------
@@ -20,8 +20,8 @@ if TYPE_CHECKING:
 def user_avatar_upload_path(instance: models.Model, filename: str) -> str:
     # You can safely cast to User if needed
     if isinstance(instance, User):
-        return f"images/profile/user_{instance.pk}/{filename}"
-    return f"images/profile/user_unknown/{filename}"
+        return "images/profile/user_{instance.pk}/{filename}"
+    return "images/profile/user_unknown/{filename}"
 
 
 # -----------------------------
@@ -176,12 +176,8 @@ class Address(models.Model):
         SHIPPING = "shipping", _("آدرس ارسال")
         BILLING = "billing", _("آدرس صورتحساب")
 
-    user: models.ForeignKey[User] = models.ForeignKey(
-        "accounts.User",
-        on_delete=models.CASCADE,
-        related_name="addresses",
-        verbose_name=_("کاربر"),
-    )
+    user = models.ForeignKey('account.User', on_delete=models.CASCADE)
+
 
     title = models.CharField(
         max_length=50,

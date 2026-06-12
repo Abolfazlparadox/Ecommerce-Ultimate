@@ -1,11 +1,11 @@
 from django import forms
-from account.models import User
 from django.core import validators
 from django.core.exceptions import ValidationError
 from iranian_cities.models import Province as Ostan, City as Shahrestan
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth import get_user_model
 
-
+User = get_user_model()
 
 class EditProfileModelForm(forms.ModelForm):
     state = forms.ModelChoiceField(queryset=Ostan.objects.all(), label=_('State'))
@@ -13,7 +13,7 @@ class EditProfileModelForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['first_name','last_name' ,'email', 'avatar', 'address' ,'about_user', 'state', 'city',]
+        fields = ['first_name','last_name' ,'email', 'avatar', 'about_user', 'state', 'city',]
         widgets = {
             'first_name': forms.TextInput(attrs={
                 'id':"namefirst" ,
