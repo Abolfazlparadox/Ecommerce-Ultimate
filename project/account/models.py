@@ -20,8 +20,8 @@ if TYPE_CHECKING:
 def user_avatar_upload_path(instance: models.Model, filename: str) -> str:
     # You can safely cast to User if needed
     if isinstance(instance, User):
-        return "images/profile/user_{instance.pk}/{filename}"
-    return "images/profile/user_unknown/{filename}"
+        return f"images/profile/user_{instance.pk}/{filename}"
+    return f"images/profile/user_unknown/{filename}"
 
 
 # -----------------------------
@@ -178,7 +178,6 @@ class Address(models.Model):
 
     user = models.ForeignKey('account.User', on_delete=models.CASCADE)
 
-
     title = models.CharField(
         max_length=50,
         verbose_name=_("عنوان آدرس"),
@@ -197,13 +196,14 @@ class Address(models.Model):
         verbose_name=_("استان"),
         db_index=True,
     )
-
+    
+    # فیلد شهر اصلاح شد
     city = models.CharField(
         max_length=50,
         verbose_name=_("شهر"),
         db_index=True,
     )
-
+    
     address_line = models.TextField(
         verbose_name=_("نشانی پستی"),
         help_text=_("خیابان، کوچه، پلاک، واحد"),

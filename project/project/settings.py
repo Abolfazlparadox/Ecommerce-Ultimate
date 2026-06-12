@@ -55,7 +55,6 @@ INSTALLED_APPS = [
     # external apps
     'django_render_partial',
     'sorl.thumbnail',
-	'jalali_date',
     'widget_tweaks',
     'ckeditor',
     'ckeditor_uploader',
@@ -63,6 +62,7 @@ INSTALLED_APPS = [
     'iranian_cities',
     'modeltranslation',
     'rosetta',
+    'jalali_date',
 ]
 
 MIDDLEWARE = [
